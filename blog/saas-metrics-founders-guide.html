@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 SaaS Metrics Every Founder Should Track in 2026 | Great Hornbills</title>
+    <meta name="description" content="Essential SaaS metrics guide for founders. Learn how to track and optimize MRR, ARR, CAC, LTV, churn, and more to build a successful software business.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://greathornbills.com/blog/saas-metrics-founders-guide">
+    <meta property="og:title" content="15 SaaS Metrics Every Founder Should Track in 2026">
+    <meta property="og:description" content="Essential SaaS metrics guide for founders. Learn to track MRR, CAC, LTV, churn, and more.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://greathornbills.com/blog/saas-metrics-founders-guide">
+    <meta property="og:site_name" content="Great Hornbills">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80">
+    <link rel="icon" href="../favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"15 SaaS Metrics Every Founder Should Track in 2026","description":"Essential SaaS metrics guide for founders.","author":{"@type":"Organization","name":"Great Hornbills"},"publisher":{"@type":"Organization","name":"Great Hornbills","logo":{"@type":"ImageObject","url":"https://greathornbills.com/images/logo.svg"}},"datePublished":"2026-03-10","dateModified":"2026-03-10"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://greathornbills.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://greathornbills.com/blog/"},{"@type":"ListItem","position":3,"name":"SaaS Metrics Guide"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is MRR?","acceptedAnswer":{"@type":"Answer","text":"MRR (Monthly Recurring Revenue) is the predictable revenue a SaaS business generates each month from subscriptions. Calculate it by summing all recurring revenue from active subscriptions, excluding one-time fees."}},{"@type":"Question","name":"What is a good churn rate for SaaS?","acceptedAnswer":{"@type":"Answer","text":"For B2B SaaS, aim for monthly churn under 2% (annual churn under 10%). Enterprise SaaS often achieves under 1% monthly churn. For B2C/SMB SaaS, 3-5% monthly churn is common but still challenging for growth."}},{"@type":"Question","name":"How do you calculate LTV?","acceptedAnswer":{"@type":"Answer","text":"LTV = ARPU × Gross Margin × Average Customer Lifespan. For example: $100 ARPU × 80% margin × 24 months = $1,920 LTV. You can also use: ARPU × Gross Margin / Monthly Churn Rate."}},{"@type":"Question","name":"What is Net Revenue Retention (NRR)?","acceptedAnswer":{"@type":"Answer","text":"NRR measures revenue retained from existing customers including expansions and contractions. NRR over 100% means you're growing revenue from existing customers even without new sales. Best-in-class SaaS companies achieve 120%+ NRR."}},{"@type":"Question","name":"What's the Rule of 40?","acceptedAnswer":{"@type":"Answer","text":"The Rule of 40 states that a SaaS company's growth rate plus profit margin should equal or exceed 40%. For example, 30% growth + 10% profit margin = 40. It balances growth vs. profitability."}}]}
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #cccccc; line-height: 1.8; }
+        a { color: #FF0050; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .blog-header { background: #FF0050; padding: 12px 0; position: sticky; top: 0; z-index: 100; }
+        .blog-header .container { max-width: 1100px; margin: 0 auto; padding: 0 30px; display: flex; justify-content: space-between; align-items: center; }
+        .blog-header .logo { color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .blog-header .logo img { height: 30px; }
+        .blog-header nav a { color: #fff; margin-left: 25px; font-size: 14px; font-weight: 500; }
+        .breadcrumb { max-width: 800px; margin: 0 auto; padding: 20px 30px 0; font-size: 13px; color: #666; }
+        .breadcrumb a { color: #888; }
+        .breadcrumb span { color: #555; margin: 0 6px; }
+        .hero-img-wrap { max-width: 800px; margin: 0 auto; padding: 24px 30px 0; }
+        .hero-img { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; }
+        .blog-hero { max-width: 800px; margin: 0 auto; padding: 24px 30px 30px; }
+        .blog-tag { display: inline-block; background: #FF0050; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 20px; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: 38px; color: #ffffff; line-height: 1.3; margin-bottom: 15px; }
+        .blog-hero .meta { color: #888; font-size: 14px; }
+        .blog-content { max-width: 800px; margin: 0 auto; padding: 20px 30px 40px; }
+        .blog-section { margin-bottom: 35px; }
+        .blog-section h2 { font-size: 22px; color: #ffffff; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #1a1a1a; }
+        .blog-section h3 { font-size: 18px; color: #FF0050; margin: 20px 0 10px; }
+        .blog-section p { font-size: 16px; line-height: 1.9; color: #cccccc; margin-bottom: 12px; }
+        .blog-section ul { margin: 15px 0 15px 25px; }
+        .blog-section li { margin-bottom: 8px; }
+        .metric-box { background: #1a1a1a; padding: 20px; border-radius: 10px; margin: 15px 0; border-left: 3px solid #FF0050; }
+        .metric-box strong { color: #fff; }
+        .faq-section { max-width: 800px; margin: 0 auto; padding: 0 30px 40px; }
+        .faq-section h2 { font-size: 24px; color: #fff; margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #FF0050; }
+        .faq-item { background: #1a1a1a; border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; border: 1px solid #222; }
+        .faq-q { font-size: 16px; color: #fff; font-weight: 600; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
+        .faq-icon { color: #FF0050; font-size: 12px; margin-top: 5px; }
+        .faq-a { font-size: 15px; color: #aaa; line-height: 1.8; padding-left: 22px; }
+        .related-section { max-width: 800px; margin: 0 auto; padding: 0 30px 40px; }
+        .related-inner { padding-top: 30px; border-top: 1px solid #222; }
+        .related-inner h3 { color: #fff; font-size: 20px; margin-bottom: 16px; }
+        .related-grid { display: flex; flex-direction: column; gap: 10px; }
+        .related-card { display: flex; justify-content: space-between; align-items: center; background: #1a1a1a; padding: 16px 20px; border-radius: 8px; border: 1px solid #222; color: #ccc; font-size: 15px; transition: border-color 0.3s, transform 0.2s; text-decoration: none; }
+        .related-card:hover { border-color: #FF0050; transform: translateX(4px); color: #fff; text-decoration: none; }
+        .related-card i { color: #FF0050; }
+        .blog-cta { max-width: 800px; margin: 0 auto 40px; padding: 0 30px; }
+        .blog-cta-box { background: #1a1a1a; border-radius: 12px; padding: 40px; border-left: 4px solid #FF0050; text-align: center; }
+        .blog-cta-box h3 { color: #fff; font-size: 22px; margin-bottom: 10px; }
+        .blog-cta-box p { color: #aaa; margin-bottom: 20px; }
+        .blog-cta-box .btn { display: inline-block; background: #FF0050; color: #fff; padding: 12px 30px; border-radius: 8px; font-weight: 600; }
+        .blog-cta-box .btn:hover { background: #e00045; text-decoration: none; }
+        .blog-footer { background: #111; padding: 30px 0; text-align: center; color: #666; font-size: 13px; }
+        .blog-footer a { color: #FF0050; }
+        @media (max-width: 768px) { .blog-hero h1 { font-size: 28px; } }
+    </style>
+</head>
+<body>
+    <header class="blog-header">
+        <div class="container">
+            <a href="../index.html" class="logo"><img src="../images/logo.svg" alt="Great Hornbills"> GREAT HORNBILLS</a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="index.html">Blog</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <a href="../index.html">Home</a> <span>&rsaquo;</span>
+        <a href="index.html">Blog</a> <span>&rsaquo;</span>
+        SaaS Metrics Guide
+    </div>
+
+    <div class="hero-img-wrap">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&q=80" alt="SaaS Metrics Dashboard" class="hero-img" loading="eager">
+    </div>
+
+    <article>
+        <div class="blog-hero">
+            <span class="blog-tag">SaaS</span>
+            <h1>15 SaaS Metrics Every Founder Should Track in 2026</h1>
+            <p class="meta">By Great Hornbills Team &bull; March 2026 &bull; 10 min read</p>
+        </div>
+
+        <div class="blog-content">
+            <div class="blog-section">
+                <h2>Why SaaS Metrics Matter</h2>
+                <p>SaaS businesses live and die by their metrics. Unlike traditional businesses, SaaS companies have unique economics: recurring revenue, customer lifetime value, and the compounding effects of retention. Understanding these metrics is essential for making smart decisions about growth, pricing, and investment.</p>
+            </div>
+
+            <div class="blog-section">
+                <h2>Revenue Metrics (1-5)</h2>
+                
+                <h3>1. MRR (Monthly Recurring Revenue)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> Sum of all recurring revenue from active subscriptions<br>
+                    <strong>Why it matters:</strong> The heartbeat of your SaaS business. Track total MRR and break it down by new, expansion, contraction, and churned MRR.
+                </div>
+                
+                <h3>2. ARR (Annual Recurring Revenue)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> MRR × 12<br>
+                    <strong>Why it matters:</strong> Used for annual planning and valuations. Most investors talk in ARR terms.
+                </div>
+                
+                <h3>3. ARPU (Average Revenue Per User)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> MRR / Number of Customers<br>
+                    <strong>Why it matters:</strong> Shows pricing power and customer segmentation. Rising ARPU indicates successful upselling.
+                </div>
+                
+                <h3>4. Net Revenue Retention (NRR)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> (Starting MRR + Expansion - Contraction - Churn) / Starting MRR<br>
+                    <strong>Why it matters:</strong> NRR above 100% means you grow even without new customers. Best SaaS companies hit 120%+.
+                </div>
+                
+                <h3>5. Gross Revenue Retention (GRR)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> (Starting MRR - Contraction - Churn) / Starting MRR<br>
+                    <strong>Why it matters:</strong> Shows pure retention without expansion. GRR can never exceed 100%.
+                </div>
+            </div>
+
+            <div class="blog-section">
+                <h2>Customer Metrics (6-10)</h2>
+                
+                <h3>6. CAC (Customer Acquisition Cost)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> Total Sales & Marketing Spend / New Customers<br>
+                    <strong>Why it matters:</strong> The cost of acquiring each customer. Must be recovered through customer lifetime value. Read our <a href="how-to-reduce-cac.html">guide to reducing CAC</a>.
+                </div>
+                
+                <h3>7. LTV (Lifetime Value)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> ARPU × Gross Margin × Customer Lifespan<br>
+                    <strong>Why it matters:</strong> Total revenue expected from a customer. LTV:CAC ratio should be 3:1 or higher.
+                </div>
+                
+                <h3>8. CAC Payback Period</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> CAC / (ARPU × Gross Margin)<br>
+                    <strong>Why it matters:</strong> Months to recover acquisition cost. Target under 12 months for healthy unit economics.
+                </div>
+                
+                <h3>9. Monthly Churn Rate</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> Lost Customers / Starting Customers<br>
+                    <strong>Why it matters:</strong> Customer churn under 2% monthly is good for B2B. Revenue churn matters more than logo churn.
+                </div>
+                
+                <h3>10. Activation Rate</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> Users Reaching "Aha Moment" / Total Signups<br>
+                    <strong>Why it matters:</strong> Predicts long-term retention. Define your activation event and optimize onboarding.
+                </div>
+            </div>
+
+            <div class="blog-section">
+                <h2>Growth Metrics (11-15)</h2>
+                
+                <h3>11. MRR Growth Rate</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> (Current MRR - Previous MRR) / Previous MRR<br>
+                    <strong>Why it matters:</strong> Monthly growth rate. Early-stage SaaS should grow 15-20%+ monthly.
+                </div>
+                
+                <h3>12. Quick Ratio</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> (New MRR + Expansion MRR) / (Churned MRR + Contraction MRR)<br>
+                    <strong>Why it matters:</strong> Measures growth efficiency. Quick ratio above 4 is excellent.
+                </div>
+                
+                <h3>13. Conversion Rate (Trial to Paid)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> Paying Customers / Free Trial Signups<br>
+                    <strong>Why it matters:</strong> For freemium/trial models, aim for 2-5% freemium or 15-25% free trial conversion.
+                </div>
+                
+                <h3>14. Lead Velocity Rate (LVR)</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> (Current Month Leads - Previous Month Leads) / Previous Month Leads<br>
+                    <strong>Why it matters:</strong> Leading indicator of future revenue growth.
+                </div>
+                
+                <h3>15. Rule of 40</h3>
+                <div class="metric-box">
+                    <strong>Formula:</strong> Revenue Growth Rate + Profit Margin ≥ 40%<br>
+                    <strong>Why it matters:</strong> Balances growth and profitability. Benchmark for healthy SaaS businesses.
+                </div>
+            </div>
+
+            <div class="blog-section">
+                <h2>Building Your Metrics Dashboard</h2>
+                <p>Don't track everything — focus on metrics that drive decisions. Start with:</p>
+                <ul>
+                    <li><strong>Weekly:</strong> MRR, New signups, Activation rate</li>
+                    <li><strong>Monthly:</strong> CAC, LTV, Churn, NRR</li>
+                    <li><strong>Quarterly:</strong> LTV:CAC, Rule of 40, Cohort analysis</li>
+                </ul>
+                <p>Use tools like ChartMogul, ProfitWell, or Baremetrics for automated tracking.</p>
+            </div>
+        </div>
+    </article>
+
+    <section class="blog-cta">
+        <div class="blog-cta-box">
+            <h3>Need Help Growing Your SaaS?</h3>
+            <p>We specialize in SaaS marketing that improves your key metrics.</p>
+            <a href="https://calendly.com/admin-greathornbills/30min" class="btn">Book Free Strategy Call</a>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-circle faq-icon"></i> What is MRR?</div>
+            <div class="faq-a">MRR (Monthly Recurring Revenue) is the predictable revenue a SaaS business generates each month from subscriptions. Calculate it by summing all recurring revenue from active subscriptions, excluding one-time fees.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-circle faq-icon"></i> What is a good churn rate for SaaS?</div>
+            <div class="faq-a">For B2B SaaS, aim for monthly churn under 2% (annual churn under 10%). Enterprise SaaS often achieves under 1% monthly churn. For B2C/SMB SaaS, 3-5% monthly churn is common but still challenging for growth.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-circle faq-icon"></i> How do you calculate LTV?</div>
+            <div class="faq-a">LTV = ARPU × Gross Margin × Average Customer Lifespan. For example: $100 ARPU × 80% margin × 24 months = $1,920 LTV. You can also use: ARPU × Gross Margin / Monthly Churn Rate.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-circle faq-icon"></i> What is Net Revenue Retention (NRR)?</div>
+            <div class="faq-a">NRR measures revenue retained from existing customers including expansions and contractions. NRR over 100% means you're growing revenue from existing customers even without new sales. Best-in-class SaaS companies achieve 120%+ NRR.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q"><i class="fas fa-circle faq-icon"></i> What's the Rule of 40?</div>
+            <div class="faq-a">The Rule of 40 states that a SaaS company's growth rate plus profit margin should equal or exceed 40%. For example, 30% growth + 10% profit margin = 40. It balances growth vs. profitability.</div>
+        </div>
+    </section>
+
+    <section class="related-section">
+        <div class="related-inner">
+            <h3>Related Posts</h3>
+            <div class="related-grid">
+                <a href="how-to-reduce-cac.html" class="related-card"><span>How to Reduce CAC</span> <i class="fas fa-arrow-right"></i></a>
+                <a href="digital-marketing-budget-planning.html" class="related-card"><span>Digital Marketing Budget Planning</span> <i class="fas fa-arrow-right"></i></a>
+                <a href="ai-tools-for-digital-marketing.html" class="related-card"><span>AI Tools for Marketing</span> <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="blog-footer">
+        <p>&copy; 2026 <a href="../index.html">Great Hornbills</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
