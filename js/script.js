@@ -103,6 +103,8 @@ if (statsSection) {
 // ========== SMOOTH SCROLL ==========
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        // Skip if this is a modal trigger or has href="#" only
+        if (this.classList.contains('open-modal') || this.getAttribute('href') === '#') return;
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {

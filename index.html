@@ -244,7 +244,7 @@
                     <span class="section-label">MARKETING</span>
                     <h2 class="section-heading">There's Traditional Digital Marketing. Then There's Great Hornbills</h2>
                     <p class="section-desc">Moving towards a digital-first approach doesn't have to be hard. Great Hornbills provides the perfect pairing of strategy and creativity to deliver marketing campaigns that convert. Our always-on services encompass SEO to paid media, ensuring your brand stays top of mind.</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-primary open-modal">Learn More</a>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -706,7 +706,7 @@
                     <span class="section-label">TECHNOLOGY</span>
                     <h2 class="section-heading">AI-Powered Marketing Intelligence</h2>
                     <p class="section-desc">Our proprietary technology is designed to scale your marketing efforts and optimize performance at the speed of digital. From advanced analytics to AI-driven insights, we make the power of technology work for you.</p>
-                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-primary open-modal">Get Started</a>
                 </div>
                 <div class="tech-visual">
                     <div class="dashboard-mockup">
@@ -761,29 +761,35 @@
             <h3 style="color:#FF0050;font-size:1.1rem;letter-spacing:2px;margin-bottom:2rem;">For brands & agencies</h3>
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #FF0050, #FF6B35, #FF0050);">
-                        <div class="product-logo">
-                            <svg viewBox="0 0 40 40" width="32" height="32"><polygon points="20,2 38,20 20,38 2,20" fill="white"/><text x="20" y="25" text-anchor="middle" fill="#FF0050" font-size="14" font-weight="bold">GH</text></svg>
-                            <span>great hornbills <strong>Analytics+</strong></span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=350&fit=crop&q=80" alt="Analytics Dashboard" class="product-img">
+                        <div class="product-overlay">
+                            <div class="product-logo">
+                                <img src="images/logo.svg" alt="GH" style="width:28px;height:28px;border-radius:6px;">
+                                <span>great hornbills <strong>Analytics+</strong></span>
+                            </div>
                         </div>
                     </div>
                     <div class="product-info">
                         <h4>Analytics+</h4>
                         <p>Real-time campaign insights and ROI tracking across all digital channels.</p>
-                        <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more open-modal">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="product-image" style="background: linear-gradient(135deg, #7C3AED, #2563EB, #7C3AED);">
-                        <div class="product-logo">
-                            <svg viewBox="0 0 40 40" width="32" height="32"><polygon points="20,2 38,20 20,38 2,20" fill="white"/><text x="20" y="25" text-anchor="middle" fill="#7C3AED" font-size="14" font-weight="bold">GH</text></svg>
-                            <span>great hornbills <strong>Secure</strong></span>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=350&fit=crop&q=80" alt="Brand Safety" class="product-img">
+                        <div class="product-overlay">
+                            <div class="product-logo">
+                                <img src="images/logo.svg" alt="GH" style="width:28px;height:28px;border-radius:6px;">
+                                <span>great hornbills <strong>Secure</strong></span>
+                            </div>
                         </div>
                     </div>
                     <div class="product-info">
                         <h4>Brand Safety Suite</h4>
                         <p>AI-powered brand safety and content moderation for worry-free campaigns.</p>
-                        <a href="#" class="read-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="read-more open-modal">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -895,10 +901,9 @@
     <!-- Calendly badge widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/admin-greathornbills/30min', text: 'Book a Call', color: '#ff0050', textColor: '#ffffff', branding: true }); }</script>
+    <script type="text/javascript">window.addEventListener('load', function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/admin-greathornbills/30min', text: 'Book a Call', color: '#ff0050', textColor: '#ffffff', branding: true }); });</script>
     <!-- Calendly badge widget end -->
 
-    <script src="js/script.js"></script>
     <!-- ========== CONTACT FORM MODAL ========== -->
     <div class="modal-overlay" id="contactModal">
         <div class="modal-container">
@@ -910,11 +915,7 @@
                     <div class="modal-info">
                         <div class="modal-info-item">
                             <i class="fas fa-envelope"></i>
-                            <span>hello@greathornbills.com</span>
-                        </div>
-                        <div class="modal-info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+91 98765 43210</span>
+                            <span>accounts@greathornbills.com</span>
                         </div>
                         <div class="modal-info-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -971,5 +972,6 @@
         </div>
     </div>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
