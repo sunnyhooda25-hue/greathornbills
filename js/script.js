@@ -194,13 +194,37 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
 });
 
-// Form submission with Calendly redirect
+// Form submission → Google Sheets + Calendly redirect
+// REPLACE THIS URL with your Google Apps Script Web App URL after setup
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwoPUpRI7v7NiGFF7AwH3ISARdu1n9LhKeh8_V0O_LxgeJLaAiZvB8BZL3-f9QRzRlh/exec';
+
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Hide form, show success + Calendly button
+    // Collect form data
+    const formData = {
+        firstName: contactForm.querySelector('input[placeholder="First Name"]').value,
+        lastName: contactForm.querySelector('input[placeholder="Last Name"]').value,
+        email: contactForm.querySelector('input[type="email"]').value,
+        company: contactForm.querySelector('input[placeholder="Company Name"]').value,
+        service: contactForm.querySelector('select').value,
+        message: contactForm.querySelector('textarea').value,
+        timestamp: new Date().toLocaleString()
+    };
+
+    // Show success immediately (don't make user wait)
     contactForm.style.display = 'none';
     formSuccess.style.display = 'block';
+
+    // Send to Google Sheets in background
+    if (GOOGLE_SHEET_URL !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+        fetch(GOOGLE_SHEET_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        }).catch(err => console.log('Sheet submit error:', err));
+    }
 
     // Add Calendly booking button dynamically
     if (!document.getElementById('calendlyBtn')) {
