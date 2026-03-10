@@ -203,12 +203,12 @@ contactForm.addEventListener('submit', (e) => {
 
     // Collect form data
     const formData = {
-        firstName: contactForm.querySelector('input[placeholder="First Name"]').value,
-        lastName: contactForm.querySelector('input[placeholder="Last Name"]').value,
-        email: contactForm.querySelector('input[type="email"]').value,
-        company: contactForm.querySelector('input[placeholder="Company Name"]').value,
-        service: contactForm.querySelector('select').value,
-        message: contactForm.querySelector('textarea').value,
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        company: document.getElementById('company').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value,
         timestamp: new Date().toLocaleString()
     };
 
