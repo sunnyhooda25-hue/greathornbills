@@ -144,15 +144,15 @@ img {
 }
 
 .logo-icon {
-    width: 42px;
-    height: 42px;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .logo-text {
     color: var(--text-white);
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.5px;
 }
