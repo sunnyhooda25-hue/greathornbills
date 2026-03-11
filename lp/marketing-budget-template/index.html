@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Marketing Budget Template (Free Google Sheets) | Great Hornbills</title>
+    <meta name="description" content="Download the free SaaS Marketing Budget Template for Google Sheets. Plan, track, and optimize your marketing spend with built-in formulas and benchmarks.">
+    <meta name="keywords" content="SaaS marketing budget, budget template, Google Sheets, marketing planning, budget tracker">
+    <meta property="og:title" content="SaaS Marketing Budget Template (Free Google Sheets)">
+    <meta property="og:description" content="Free template to plan and track your SaaS marketing budget. Includes CAC tracking, channel allocation, and benchmarks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://greathornbills.com/lp/marketing-budget-template/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://greathornbills.com/lp/marketing-budget-template/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #111111;
+            --accent: #FF0050;
+            --accent-hover: #E60048;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --border: #222222;
+            --success: #22c55e;
+            --google-green: #34A853;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .lp-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .lp-header .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .lp-header .logo img {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .lp-hero {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        @media (max-width: 900px) {
+            .lp-hero {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        .lp-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(52, 168, 83, 0.15);
+            color: var(--google-green);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .lp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+        
+        .lp-title span {
+            color: var(--accent);
+        }
+        
+        .lp-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        /* Screenshot Preview */
+        .lp-screenshot {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .screenshot-header {
+            background: #1a1a1a;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .screenshot-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .screenshot-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .screenshot-dots span:nth-child(1) { background: #ff5f57; }
+        .screenshot-dots span:nth-child(2) { background: #febc2e; }
+        .screenshot-dots span:nth-child(3) { background: #28c840; }
+        
+        .screenshot-title {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-left: 0.5rem;
+        }
+        
+        .screenshot-body {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+        }
+        
+        /* Spreadsheet Preview */
+        .spreadsheet-preview {
+            background: #1c1c1c;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .spreadsheet-toolbar {
+            background: var(--google-green);
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .spreadsheet-toolbar i {
+            font-size: 1.25rem;
+        }
+        
+        .spreadsheet-toolbar span {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .spreadsheet-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(4, 1fr);
+            font-size: 0.8rem;
+        }
+        
+        .spreadsheet-cell {
+            padding: 0.6rem 0.75rem;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: #1a1a1a;
+        }
+        
+        .spreadsheet-cell.header {
+            background: #252525;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .spreadsheet-cell.category {
+            background: rgba(255, 0, 80, 0.1);
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .spreadsheet-cell.positive {
+            color: var(--success);
+        }
+        
+        .spreadsheet-cell.negative {
+            color: #ef4444;
+        }
+        
+        /* Features List */
+        .lp-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .lp-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .lp-features li i {
+            color: var(--accent);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* Form Card */
+        .lp-form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+        
+        .lp-form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .lp-form-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        
+        .lp-form .form-group {
+            margin-bottom: 1.25rem;
+        }
+        
+        .lp-form label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .lp-form input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        .lp-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .lp-form input::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .lp-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+        
+        .lp-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        
+        .lp-privacy {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+        
+        .lp-privacy i {
+            margin-right: 0.25rem;
+        }
+        
+        /* Template Features */
+        .lp-template-features {
+            padding: 4rem 2rem;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+        }
+        
+        .lp-template-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .lp-section-title {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+        
+        .lp-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .lp-feature-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .lp-feature-card h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .lp-feature-card h4 i {
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+        
+        .lp-feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Social Proof */
+        .lp-social-proof {
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .lp-social-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .lp-proof-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .lp-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .lp-stat {
+            text-align: center;
+        }
+        
+        .lp-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+            display: block;
+        }
+        
+        .lp-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .lp-trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .lp-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .lp-badge-item i {
+            color: var(--success);
+        }
+        
+        /* Footer */
+        .lp-footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        .lp-footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        
+        .lp-footer a:hover {
+            color: var(--accent);
+        }
+        
+        /* Success State */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .form-success.show {
+            display: block;
+        }
+        
+        .form-success i {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+        
+        .form-success h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-success p {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="lp-header">
+        <a href="../../index.html" class="logo">
+            <img src="../../images/logo.svg" alt="Great Hornbills">
+            <span>great hornbills</span>
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="lp-hero">
+        <div class="lp-hero-content">
+            <span class="lp-badge"><i class="fab fa-google-drive"></i> Google Sheets Template</span>
+            <h1 class="lp-title">SaaS Marketing Budget Template <span>(Free Google Sheets)</span></h1>
+            <p class="lp-subtitle">The same budget template used by 200+ SaaS marketing teams to plan, track, and optimize their marketing spend. Complete with formulas, benchmarks, and CAC tracking.</p>
+            
+            <!-- Screenshot Preview -->
+            <div class="lp-screenshot">
+                <div class="screenshot-header">
+                    <div class="screenshot-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="screenshot-title">SaaS Marketing Budget Template 2026</span>
+                </div>
+                <div class="screenshot-body">
+                    <div class="spreadsheet-preview">
+                        <div class="spreadsheet-toolbar">
+                            <i class="fas fa-table"></i>
+                            <span>Marketing Budget Tracker</span>
+                        </div>
+                        <div class="spreadsheet-grid">
+                            <div class="spreadsheet-cell header">Channel</div>
+                            <div class="spreadsheet-cell header">Budget</div>
+                            <div class="spreadsheet-cell header">Actual</div>
+                            <div class="spreadsheet-cell header">CAC</div>
+                            <div class="spreadsheet-cell header">ROI</div>
+                            
+                            <div class="spreadsheet-cell category">Paid Search</div>
+                            <div class="spreadsheet-cell">$15,000</div>
+                            <div class="spreadsheet-cell">$14,230</div>
+                            <div class="spreadsheet-cell">$48</div>
+                            <div class="spreadsheet-cell positive">320%</div>
+                            
+                            <div class="spreadsheet-cell category">LinkedIn Ads</div>
+                            <div class="spreadsheet-cell">$8,000</div>
+                            <div class="spreadsheet-cell">$7,840</div>
+                            <div class="spreadsheet-cell">$125</div>
+                            <div class="spreadsheet-cell positive">180%</div>
+                            
+                            <div class="spreadsheet-cell category">Content/SEO</div>
+                            <div class="spreadsheet-cell">$5,000</div>
+                            <div class="spreadsheet-cell">$4,950</div>
+                            <div class="spreadsheet-cell">$22</div>
+                            <div class="spreadsheet-cell positive">450%</div>
+                            
+                            <div class="spreadsheet-cell category">Meta Ads</div>
+                            <div class="spreadsheet-cell">$6,000</div>
+                            <div class="spreadsheet-cell">$6,200</div>
+                            <div class="spreadsheet-cell negative">$180</div>
+                            <div class="spreadsheet-cell negative">85%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="lp-features">
+                <li><i class="fas fa-check-circle"></i> <span>Pre-built formulas for CAC, LTV:CAC ratio, and ROI</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Industry benchmarks for SaaS marketing spend</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Monthly & quarterly budget tracking views</span></li>
+                <li><i class="fas fa-check-circle"></i> <span>Channel performance comparison dashboard</span></li>
+            </ul>
+        </div>
+        
+        <div class="lp-form-card">
+            <h2 class="lp-form-title">Get the Free Template</h2>
+            <p class="lp-form-subtitle">Instant access to your Google Sheets copy.</p>
+            
+            <form class="lp-form" id="leadForm" action="/api/lead-capture" method="POST">
+                <input type="hidden" name="source" value="marketing-budget-template">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                </div>
+                <div class="form-group">
+                    <label for="email">Work Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="john@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name *</label>
+                    <input type="text" id="company" name="company" required placeholder="Acme Inc">
+                </div>
+                <button type="submit" class="lp-btn">
+                    <i class="fas fa-file-export"></i> Get Free Template
+                </button>
+                <p class="lp-privacy"><i class="fas fa-lock"></i> Your data is secure. Unsubscribe anytime.</p>
+            </form>
+            
+            <div class="form-success" id="formSuccess">
+                <i class="fas fa-check-circle"></i>
+                <h3>Check Your Inbox!</h3>
+                <p>Your template link is on its way. Make a copy and start tracking!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Features -->
+    <section class="lp-template-features">
+        <div class="lp-template-inner">
+            <h2 class="lp-section-title">What's Included in the Template</h2>
+            
+            <div class="lp-feature-grid">
+                <div class="lp-feature-card">
+                    <h4><i class="fas fa-calculator"></i> Budget Planner</h4>
+                    <p>Annual and monthly budget allocation with automatic rollup calculations and variance tracking.</p>
+                </div>
+                <div class="lp-feature-card">
+                    <h4><i class="fas fa-chart-pie"></i> Channel Dashboard</h4>
+                    <p>Visual breakdown of spend by channel with performance metrics and trend analysis.</p>
+                </div>
+                <div class="lp-feature-card">
+                    <h4><i class="fas fa-dollar-sign"></i> CAC Tracker</h4>
+                    <p>Automated CAC calculations by channel with LTV:CAC ratio tracking and alerts.</p>
+                </div>
+                <div class="lp-feature-card">
+                    <h4><i class="fas fa-balance-scale"></i> Industry Benchmarks</h4>
+                    <p>Built-in SaaS benchmarks for budget allocation, CAC, and channel performance.</p>
+                </div>
+                <div class="lp-feature-card">
+                    <h4><i class="fas fa-calendar-alt"></i> Monthly Tracking</h4>
+                    <p>Month-over-month comparison with automated variance analysis and forecasting.</p>
+                </div>
+                <div class="lp-feature-card">
+                    <h4><i class="fas fa-file-invoice-dollar"></i> Scenario Planning</h4>
+                    <p>Test different budget scenarios and see projected impact on CAC and growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="lp-social-proof">
+        <div class="lp-social-inner">
+            <p class="lp-proof-title">Trusted by SaaS marketing teams worldwide</p>
+            
+            <div class="lp-stats">
+                <div class="lp-stat">
+                    <span class="lp-stat-number">2,400+</span>
+                    <span class="lp-stat-label">Downloads</span>
+                </div>
+                <div class="lp-stat">
+                    <span class="lp-stat-number">$50M+</span>
+                    <span class="lp-stat-label">Budget Tracked</span>
+                </div>
+                <div class="lp-stat">
+                    <span class="lp-stat-number">4.9/5</span>
+                    <span class="lp-stat-label">User Rating</span>
+                </div>
+            </div>
+            
+            <div class="lp-trust-badges">
+                <div class="lp-badge-item"><i class="fas fa-shield-alt"></i> No Credit Card Required</div>
+                <div class="lp-badge-item"><i class="fab fa-google-drive"></i> Works in Google Sheets</div>
+                <div class="lp-badge-item"><i class="fas fa-sync"></i> Auto-Updates</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="lp-footer">
+        <p>&copy; 2026 Great Hornbills Inc. &bull; <a href="../../index.html">Home</a> &bull; <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            this.style.display = 'none';
+            document.getElementById('formSuccess').classList.add('show');
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'lead_capture', {
+                    'event_category': 'Lead Magnet',
+                    'event_label': 'Marketing Budget Template'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
