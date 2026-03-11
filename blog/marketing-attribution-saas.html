@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Attribution for SaaS: The Complete Guide | Great Hornbills</title>
+    <meta name="description" content="Master marketing attribution for SaaS. Learn attribution models, multi-touch tracking, and how to measure what's actually driving revenue.">
+    <meta name="keywords" content="marketing attribution SaaS, multi-touch attribution, SaaS analytics, marketing ROI, UTM tracking">
+    <link rel="canonical" href="https://greathornbills.com/blog/marketing-attribution-saas.html">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #0a0a0a; --card: #111; --border: #222; --accent: #FF0050; --text: #fff; --gray: #888; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        header { padding: 20px 0; border-bottom: 1px solid var(--border); }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text); text-decoration: none; }
+        article { padding: 60px 0; }
+        h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; }
+        .meta { color: var(--gray); margin-bottom: 40px; }
+        h2 { font-size: 1.75rem; margin: 40px 0 20px; color: var(--accent); }
+        h3 { font-size: 1.25rem; margin: 30px 0 15px; }
+        p { margin-bottom: 20px; color: #ccc; }
+        ul, ol { margin: 20px 0; padding-left: 24px; color: #ccc; }
+        li { margin-bottom: 10px; }
+        .stage-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .stage-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .stage-num { background: var(--accent); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .stage-title { font-size: 1.25rem; font-weight: 700; }
+        .cta-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
+        .cta-btn { display: inline-block; background: var(--accent); color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--gray); }
+        .tip-box { background: #1a1a1a; border-left: 4px solid var(--accent); padding: 16px 20px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border: 1px solid var(--border); }
+        th { background: var(--card); color: var(--accent); }
+        td { color: #ccc; }
+        code { background: var(--card); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header><div class="container"><a href="/" class="logo">🦅 Great Hornbills</a></div></header>
+    
+    <article>
+        <div class="container">
+            <h1>Marketing Attribution for SaaS: The Complete Guide</h1>
+            <p class="meta">March 11, 2026 • 15 min read</p>
+            
+            <p>You're spending money on Google Ads, content, LinkedIn, webinars, and a dozen other channels. But what's actually driving revenue? Without proper attribution, you're flying blind—potentially wasting half your budget on channels that don't work.</p>
+            
+            <h2>Why Attribution is Hard (and Why It Matters)</h2>
+            <p>The average B2B buyer has 36 touchpoints before converting. They might:</p>
+            <ol>
+                <li>See a LinkedIn ad</li>
+                <li>Read a blog post (organic search)</li>
+                <li>Download an ebook</li>
+                <li>Attend a webinar</li>
+                <li>Get nurtured via email</li>
+                <li>Click a retargeting ad</li>
+                <li>Finally sign up for a demo</li>
+            </ol>
+            <p>Which of those touchpoints gets credit for the conversion? That's the attribution problem.</p>
+            
+            <div class="tip-box">
+                <strong>The stakes are high:</strong> Bad attribution leads to bad decisions. You might cut the blog that's actually creating awareness, or double down on the last-click channel that's just harvesting demand you created elsewhere.
+            </div>
+            
+            <h2>Attribution Models Explained</h2>
+            
+            <div class="stage-box">
+                <div class="stage-header">
+                    <span class="stage-num">1</span>
+                    <span class="stage-title">First-Touch Attribution</span>
+                </div>
+                <p style="margin-bottom: 16px; color: #ccc;">100% credit goes to the first interaction.</p>
+                <ul style="color: #ccc; padding-left: 20px;">
+                    <li><strong>Best for:</strong> Understanding demand generation, top-of-funnel</li>
+                    <li><strong>Weakness:</strong> Ignores everything that happened after initial touch</li>
+                    <li><strong>Example:</strong> Credit goes to the organic search that brought them to your blog</li>
+                </ul>
+            </div>
+            
+            <div class="stage-box">
+                <div class="stage-header">
+                    <span class="stage-num">2</span>
+                    <span class="stage-title">Last-Touch Attribution</span>
+                </div>
+                <p style="margin-bottom: 16px; color: #ccc;">100% credit goes to the final interaction before conversion.</p>
+                <ul style="color: #ccc; padding-left: 20px;">
+                    <li><strong>Best for:</strong> Direct response, short sales cycles</li>
+                    <li><strong>Weakness:</strong> Over-credits channels that close, under-credits awareness</li>
+                    <li><strong>Example:</strong> Credit goes to the Google branded search they used to sign up</li>
+                </ul>
+            </div>
+            
+            <div class="stage-box">
+                <div class="stage-header">
+                    <span class="stage-num">3</span>
+                    <span class="stage-title">Linear Attribution</span>
+                </div>
+                <p style="margin-bottom: 16px; color: #ccc;">Equal credit to every touchpoint in the journey.</p>
+                <ul style="color: #ccc; padding-left: 20px;">
+                    <li><strong>Best for:</strong> Getting a balanced view when you're starting out</li>
+                    <li><strong>Weakness:</strong> Assumes all touches are equally important (they're not)</li>
+                    <li><strong>Example:</strong> 5 touchpoints = 20% credit each</li>
+                </ul>
+            </div>
+            
+            <div class="stage-box">
+                <div class="stage-header">
+                    <span class="stage-num">4</span>
+                    <span class="stage-title">Time-Decay Attribution</span>
+                </div>
+                <p style="margin-bottom: 16px; color: #ccc;">More credit to touches closer to conversion.</p>
+                <ul style="color: #ccc; padding-left: 20px;">
+                    <li><strong>Best for:</strong> Longer sales cycles, B2B SaaS</li>
+                    <li><strong>Weakness:</strong> Still undervalues top-of-funnel</li>
+                    <li><strong>Example:</strong> Final touch gets 40%, previous gets 30%, etc.</li>
+                </ul>
+            </div>
+            
+            <div class="stage-box">
+                <div class="stage-header">
+                    <span class="stage-num">5</span>
+                    <span class="stage-title">U-Shaped (Position-Based)</span>
+                </div>
+                <p style="margin-bottom: 16px; color: #ccc;">40% to first touch, 40% to lead creation, 20% distributed to middle.</p>
+                <ul style="color: #ccc; padding-left: 20px;">
+                    <li><strong>Best for:</strong> B2B SaaS with clear lead gen moments</li>
+                    <li><strong>Weakness:</strong> Arbitrary weighting</li>
+                    <li><strong>Example:</strong> First blog visit (40%) + webinar signup (40%) + other touches (20%)</li>
+                </ul>
+            </div>
+            
+            <div class="stage-box">
+                <div class="stage-header">
+                    <span class="stage-num">6</span>
+                    <span class="stage-title">W-Shaped Attribution</span>
+                </div>
+                <p style="margin-bottom: 16px; color: #ccc;">30% first touch, 30% lead creation, 30% opportunity creation, 10% rest.</p>
+                <ul style="color: #ccc; padding-left: 20px;">
+                    <li><strong>Best for:</strong> Complex B2B sales with sales involvement</li>
+                    <li><strong>Weakness:</strong> Requires accurate opportunity data</li>
+                    <li><strong>Example:</strong> Recognizes marketing + sales handoff moments</li>
+                </ul>
+            </div>
+            
+            <h2>Which Model Should You Use?</h2>
+            <table>
+                <tr>
+                    <th>Your Situation</th>
+                    <th>Recommended Model</th>
+                </tr>
+                <tr>
+                    <td>Just getting started with attribution</td>
+                    <td>Linear (simple, balanced)</td>
+                </tr>
+                <tr>
+                    <td>Short sales cycle (&lt;30 days)</td>
+                    <td>Last-touch or Time-decay</td>
+                </tr>
+                <tr>
+                    <td>Long sales cycle, enterprise</td>
+                    <td>W-shaped or Time-decay</td>
+                </tr>
+                <tr>
+                    <td>Focus on demand gen measurement</td>
+                    <td>First-touch alongside others</td>
+                </tr>
+                <tr>
+                    <td>PLG with freemium</td>
+                    <td>U-shaped (signup is key moment)</td>
+                </tr>
+            </table>
+            
+            <div class="tip-box">
+                <strong>Pro tip:</strong> Don't pick just one. Run multiple models in parallel and compare. The truth is usually somewhere between first-touch and last-touch.
+            </div>
+            
+            <h2>Setting Up Attribution Tracking</h2>
+            
+            <h3>Step 1: UTM Parameters (The Foundation)</h3>
+            <p>Every marketing link should have UTM parameters:</p>
+            <ul>
+                <li><code>utm_source</code>: Where traffic comes from (google, linkedin, newsletter)</li>
+                <li><code>utm_medium</code>: Marketing medium (cpc, organic, email, social)</li>
+                <li><code>utm_campaign</code>: Campaign name (spring-promo, webinar-may)</li>
+                <li><code>utm_content</code>: Specific ad or link (ad-variant-a, header-cta)</li>
+                <li><code>utm_term</code>: Paid keywords (saas-marketing-tool)</li>
+            </ul>
+            
+            <h3>UTM Best Practices</h3>
+            <ul>
+                <li><strong>Be consistent:</strong> "google" not "Google" or "GOOGLE"</li>
+                <li><strong>Use a naming convention:</strong> Document it, share with team</li>
+                <li><strong>Track everything:</strong> Even internal links where relevant</li>
+                <li><strong>Use a UTM builder:</strong> Reduces errors</li>
+            </ul>
+            
+            <h3>Step 2: Capture UTMs in Your System</h3>
+            <p>UTMs are useless if they're not stored:</p>
+            <ol>
+                <li>Store first-touch UTMs in a cookie (90-day expiry)</li>
+                <li>Store last-touch UTMs on conversion</li>
+                <li>Pass both to your CRM/signup form</li>
+                <li>Tie to the contact/account record</li>
+            </ol>
+            
+            <h3>Step 3: Connect Your Data Sources</h3>
+            <p>For accurate attribution, you need data flowing between:</p>
+            <ul>
+                <li><strong>Website analytics:</strong> Google Analytics 4, Mixpanel, Amplitude</li>
+                <li><strong>CRM:</strong> Salesforce, HubSpot</li>
+                <li><strong>Ad platforms:</strong> Google Ads, LinkedIn, Facebook</li>
+                <li><strong>Marketing automation:</strong> Marketo, Pardot, HubSpot</li>
+                <li><strong>Product analytics:</strong> Usage data tied to contacts</li>
+            </ul>
+            
+            <h2>Multi-Touch Attribution in Practice</h2>
+            
+            <h3>The Customer Journey View</h3>
+            <p>Build a view that shows every touchpoint for each closed-won deal:</p>
+            <ul>
+                <li>Date of touchpoint</li>
+                <li>Channel (source/medium)</li>
+                <li>Campaign</li>
+                <li>Content/asset</li>
+                <li>Touchpoint type (ad impression, page view, form fill, email click)</li>
+            </ul>
+            
+            <h3>Sample Journey Analysis</h3>
+            <div class="stage-box">
+                <p style="color: #ccc; margin-bottom: 8px;"><strong>Deal:</strong> Acme Corp - $50,000 ACV</p>
+                <p style="color: #ccc; margin-bottom: 8px;"><strong>Journey:</strong></p>
+                <ol style="color: #ccc; padding-left: 20px;">
+                    <li>Day 1: Organic search → Blog post (first touch)</li>
+                    <li>Day 5: LinkedIn ad impression</li>
+                    <li>Day 12: Direct → Pricing page</li>
+                    <li>Day 15: Email → Webinar registration (lead created)</li>
+                    <li>Day 18: Webinar attended</li>
+                    <li>Day 25: SDR outbound email</li>
+                    <li>Day 30: Demo scheduled (opportunity)</li>
+                    <li>Day 45: Google branded search → Signup (last touch)</li>
+                </ol>
+                <p style="color: #ccc; margin-top: 12px;"><strong>W-Shaped credit:</strong> Blog (30%) + Webinar (30%) + Demo (30%) + Other (10%)</p>
+            </div>
+            
+            <h2>Self-Reported Attribution (Dark Social)</h2>
+            <p>Much of your best marketing is untraceable: podcasts, word of mouth, Slack communities, dark social shares. Capture this with a "How did you hear about us?" field.</p>
+            
+            <h3>Best Practices for Self-Reported</h3>
+            <ul>
+                <li><strong>Open text field:</strong> Don't force dropdown options</li>
+                <li><strong>Ask at signup:</strong> Memory is fresh</li>
+                <li><strong>Also ask in sales calls:</strong> "What made you look into us?"</li>
+                <li><strong>Categorize responses:</strong> Tag and analyze themes</li>
+            </ul>
+            
+            <div class="tip-box">
+                <strong>Why this matters:</strong> A prospect might say "My friend recommended you" even though their trackable journey started with a Google search. The real attribution is the friend—you'd never know without asking.
+            </div>
+            
+            <h2>Attribution Tools for SaaS</h2>
+            
+            <h3>Starter Stack (Free - $500/mo)</h3>
+            <ul>
+                <li><strong>Google Analytics 4:</strong> Free, basic attribution models</li>
+                <li><strong>HubSpot:</strong> Built-in attribution reporting</li>
+                <li><strong>UTM.io:</strong> UTM management</li>
+                <li><strong>Spreadsheets:</strong> Manual analysis when starting</li>
+            </ul>
+            
+            <h3>Growth Stack ($500 - $5K/mo)</h3>
+            <ul>
+                <li><strong>Dreamdata:</strong> B2B revenue attribution</li>
+                <li><strong>HockeyStack:</strong> No-code attribution</li>
+                <li><strong>Segment:</strong> Customer data platform</li>
+                <li><strong>Mixpanel/Amplitude:</strong> Product + marketing analytics</li>
+            </ul>
+            
+            <h3>Enterprise Stack ($5K+/mo)</h3>
+            <ul>
+                <li><strong>Bizible (Marketo):</strong> Full B2B attribution suite</li>
+                <li><strong>CaliberMind:</strong> Multi-touch attribution</li>
+                <li><strong>Attribution (by Adjust):</strong> Mobile + web</li>
+                <li><strong>Data warehouse + BI:</strong> Custom attribution models</li>
+            </ul>
+            
+            <h2>Common Attribution Mistakes</h2>
+            <ol>
+                <li><strong>Last-touch only:</strong> You'll over-invest in branded search and retargeting</li>
+                <li><strong>Ignoring dark social:</strong> Podcasts, communities, word of mouth matter</li>
+                <li><strong>Not connecting to revenue:</strong> Attributing leads instead of closed-won revenue</li>
+                <li><strong>Over-engineering:</strong> Perfect attribution doesn't exist—start simple</li>
+                <li><strong>Siloed data:</strong> Marketing data not connected to sales outcomes</li>
+                <li><strong>Short lookback windows:</strong> Enterprise deals take 6+ months</li>
+            </ol>
+            
+            <h2>Attribution Metrics to Track</h2>
+            <ul>
+                <li><strong>Pipeline by first-touch channel:</strong> What creates demand?</li>
+                <li><strong>Pipeline by last-touch channel:</strong> What converts demand?</li>
+                <li><strong>Revenue by channel (multi-touch):</strong> Blended view</li>
+                <li><strong>CAC by channel:</strong> Cost to acquire via each source</li>
+                <li><strong>Time to conversion by channel:</strong> Which channels convert faster?</li>
+                <li><strong>Assisted conversions:</strong> Channels that touch deals but don't close</li>
+            </ul>
+            
+            <h2>Getting Started: 30-Day Plan</h2>
+            <ol>
+                <li><strong>Week 1:</strong> Audit current tracking—what UTMs exist? What's captured?</li>
+                <li><strong>Week 2:</strong> Standardize UTM conventions, document naming system</li>
+                <li><strong>Week 3:</strong> Ensure UTMs flow to CRM, add self-reported field</li>
+                <li><strong>Week 4:</strong> Build first attribution report, analyze top channels</li>
+            </ol>
+            
+            <h2>The Attribution Mindset</h2>
+            <p>Don't obsess over perfect attribution—it's impossible. Instead:</p>
+            <ul>
+                <li><strong>Embrace imperfection:</strong> Directionally correct is good enough</li>
+                <li><strong>Use multiple lenses:</strong> First, last, and multi-touch together</li>
+                <li><strong>Listen to customers:</strong> Self-reported attribution adds context</li>
+                <li><strong>Test and learn:</strong> Run experiments to validate attribution insights</li>
+                <li><strong>Focus on decisions:</strong> Attribution should drive action, not just reports</li>
+            </ul>
+            
+            <div class="cta-box">
+                <h3>Need Help Setting Up Attribution?</h3>
+                <p>Get a free marketing analytics audit. We'll identify tracking gaps and help you understand what's really driving revenue.</p>
+                <a href="/free-audit/" class="cta-btn">Get Free Audit →</a>
+            </div>
+        </div>
+    </article>
+    
+    <footer><div class="container"><p>© 2026 Great Hornbills. All rights reserved.</p></div></footer>
+</body>
+</html>
