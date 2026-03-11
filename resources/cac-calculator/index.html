@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free SaaS CAC Calculator | Great Hornbills</title>
+    <meta name="description" content="Calculate your true Customer Acquisition Cost. Free interactive calculator + benchmarks for SaaS companies.">
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-dark: #0a0a0a;
+            --accent: #FF0050;
+            --text-white: #ffffff;
+            --text-gray: #a0a0a0;
+            --card-bg: #111111;
+            --border: #222222;
+            --green: #00D26A;
+            --yellow: #FFD700;
+            --red: #FF4444;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            text-decoration: none;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            color: var(--text-gray);
+            font-size: 1.15rem;
+        }
+        
+        /* Calculator */
+        .calculator {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .calc-section {
+            margin-bottom: 32px;
+        }
+        .calc-section h3 {
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-white);
+            font-size: 1rem;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .input-hint {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+        
+        /* Results */
+        .results {
+            background: var(--bg-dark);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 32px;
+        }
+        .results h3 {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .result-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .result-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .result-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .result-value {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        .result-value.good { color: var(--green); }
+        .result-value.warning { color: var(--yellow); }
+        .result-value.bad { color: var(--red); }
+        .result-benchmark {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+        
+        /* Health Score */
+        .health-section {
+            margin-top: 32px;
+            padding: 24px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .health-score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 16px 0;
+        }
+        .health-label {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+        
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+        .cta-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+        }
+        .cta-section p {
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+        
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-gray);
+        }
+        
+        @media (max-width: 768px) {
+            .input-grid, .result-cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">🦅 Great Hornbills</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>📊 SaaS CAC Calculator</h1>
+            <p>Calculate your true Customer Acquisition Cost and see how you compare to benchmarks.</p>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <div class="calculator">
+                <div class="calc-section">
+                    <h3>💰 Marketing Spend (Monthly)</h3>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label>Paid Ads Spend</label>
+                            <input type="number" id="paidAds" placeholder="$5,000" oninput="calculate()">
+                            <p class="input-hint">Google, Facebook, LinkedIn ads</p>
+                        </div>
+                        <div class="input-group">
+                            <label>Marketing Team Salaries</label>
+                            <input type="number" id="salaries" placeholder="$10,000" oninput="calculate()">
+                            <p class="input-hint">Full + fractional marketing hires</p>
+                        </div>
+                        <div class="input-group">
+                            <label>Tools & Software</label>
+                            <input type="number" id="tools" placeholder="$500" oninput="calculate()">
+                            <p class="input-hint">HubSpot, analytics, etc.</p>
+                        </div>
+                        <div class="input-group">
+                            <label>Agency / Contractor Fees</label>
+                            <input type="number" id="agency" placeholder="$2,500" oninput="calculate()">
+                            <p class="input-hint">External marketing help</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calc-section">
+                    <h3>📈 Results (Monthly)</h3>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label>New Customers Acquired</label>
+                            <input type="number" id="customers" placeholder="50" oninput="calculate()">
+                            <p class="input-hint">Paying customers added this month</p>
+                        </div>
+                        <div class="input-group">
+                            <label>Average Contract Value (ACV)</label>
+                            <input type="number" id="acv" placeholder="$1,200" oninput="calculate()">
+                            <p class="input-hint">Average annual revenue per customer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="results">
+                    <h3>📊 Your Results</h3>
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <p class="result-label">Customer Acquisition Cost</p>
+                            <p class="result-value" id="cacResult">$0</p>
+                            <p class="result-benchmark">Benchmark: $200-500</p>
+                        </div>
+                        <div class="result-card">
+                            <p class="result-label">CAC Payback Period</p>
+                            <p class="result-value" id="paybackResult">0 mo</p>
+                            <p class="result-benchmark">Benchmark: &lt;12 months</p>
+                        </div>
+                        <div class="result-card">
+                            <p class="result-label">LTV:CAC Ratio</p>
+                            <p class="result-value" id="ltvCacResult">0:1</p>
+                            <p class="result-benchmark">Benchmark: 3:1 or higher</p>
+                        </div>
+                    </div>
+                    
+                    <div class="health-section">
+                        <p class="health-label">Unit Economics Health Score</p>
+                        <p class="health-score" id="healthScore">—</p>
+                        <p id="healthMessage" style="color: var(--text-gray);"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Want to Improve These Numbers?</h2>
+            <p>Get a free audit showing exactly how to reduce your CAC by 30-40%.</p>
+            <a href="/free-audit/" class="cta-btn">Get Free Audit →</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Great Hornbills. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function calculate() {
+            const paidAds = parseFloat(document.getElementById('paidAds').value) || 0;
+            const salaries = parseFloat(document.getElementById('salaries').value) || 0;
+            const tools = parseFloat(document.getElementById('tools').value) || 0;
+            const agency = parseFloat(document.getElementById('agency').value) || 0;
+            const customers = parseFloat(document.getElementById('customers').value) || 0;
+            const acv = parseFloat(document.getElementById('acv').value) || 0;
+            
+            const totalSpend = paidAds + salaries + tools + agency;
+            
+            // CAC
+            const cac = customers > 0 ? totalSpend / customers : 0;
+            const cacEl = document.getElementById('cacResult');
+            cacEl.textContent = '$' + Math.round(cac).toLocaleString();
+            cacEl.className = 'result-value ' + (cac < 300 ? 'good' : cac < 600 ? 'warning' : 'bad');
+            
+            // Payback Period (months)
+            const monthlyRevenue = acv / 12;
+            const payback = monthlyRevenue > 0 ? cac / monthlyRevenue : 0;
+            const paybackEl = document.getElementById('paybackResult');
+            paybackEl.textContent = Math.round(payback) + ' mo';
+            paybackEl.className = 'result-value ' + (payback < 12 ? 'good' : payback < 18 ? 'warning' : 'bad');
+            
+            // LTV:CAC (assuming 3 year LTV)
+            const ltv = acv * 3;
+            const ltvCac = cac > 0 ? ltv / cac : 0;
+            const ltvCacEl = document.getElementById('ltvCacResult');
+            ltvCacEl.textContent = ltvCac.toFixed(1) + ':1';
+            ltvCacEl.className = 'result-value ' + (ltvCac >= 3 ? 'good' : ltvCac >= 2 ? 'warning' : 'bad');
+            
+            // Health Score
+            let score = 0;
+            if (cac > 0 && cac < 500) score += 33;
+            else if (cac >= 500 && cac < 800) score += 20;
+            if (payback > 0 && payback < 12) score += 33;
+            else if (payback >= 12 && payback < 18) score += 20;
+            if (ltvCac >= 3) score += 34;
+            else if (ltvCac >= 2) score += 20;
+            
+            const healthEl = document.getElementById('healthScore');
+            const messageEl = document.getElementById('healthMessage');
+            
+            if (totalSpend === 0 || customers === 0) {
+                healthEl.textContent = '—';
+                healthEl.style.color = 'var(--text-gray)';
+                messageEl.textContent = 'Enter your data above to see results';
+            } else {
+                healthEl.textContent = Math.round(score) + '/100';
+                if (score >= 80) {
+                    healthEl.style.color = 'var(--green)';
+                    messageEl.textContent = '🎉 Excellent! Your unit economics are healthy.';
+                } else if (score >= 50) {
+                    healthEl.style.color = 'var(--yellow)';
+                    messageEl.textContent = '⚠️ Room for improvement. Let\'s optimize your CAC.';
+                } else {
+                    healthEl.style.color = 'var(--red)';
+                    messageEl.textContent = '🚨 Needs attention. Your CAC is likely unsustainable.';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
