@@ -1039,12 +1039,8 @@
                 }
             }).then(response => {
                 if (response.ok) {
-                    // Show success
-                    document.getElementById('formContent').classList.add('hidden');
-                    document.getElementById('formSuccess').classList.remove('hidden');
-                    
-                    // Scroll to form
-                    document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+                    // Redirect to thank you page
+                    window.location.href = '/thank-you.html';
                 } else {
                     alert('There was an error. Please try again or book a call directly.');
                 }
