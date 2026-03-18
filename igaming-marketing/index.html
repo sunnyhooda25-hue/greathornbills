@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGaming Marketing Agency | Great Hornbills - Acquire Players Profitably</title>
+    <meta name="description" content="Specialist digital marketing agency for online casinos, sportsbooks & betting platforms. Performance-first approach. Book your free strategy call today.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8T78B119F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G8T78B119F');
+        
+        // Capture UTM parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmSource = urlParams.get('utm_source') || 'direct';
+        const utmMedium = urlParams.get('utm_medium') || 'none';
+        const utmCampaign = urlParams.get('utm_campaign') || 'none';
+        
+        // Send page view event with UTM data
+        gtag('event', 'page_view', {
+            'page_title': 'iGaming Marketing Landing Page',
+            'page_location': window.location.href,
+            'utm_source': utmSource,
+            'utm_medium': utmMedium,
+            'utm_campaign': utmCampaign
+        });
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #FF6B35;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero .subheading {
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #FF6B35;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .problem-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .problem-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            text-align: center;
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Form Section */
+        .form-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .form-container h2 {
+            color: #1a1a1a;
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .form-container p {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-note {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .footer a {
+            color: #FF6B35;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero .subheading {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <a href="/" class="logo">Great Hornbills</a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>The Marketing Agency Built for iGaming</h1>
+            <p class="subheading">We help online casinos, sportsbooks & betting platforms acquire players profitably</p>
+            <a href="#form" class="cta-button">Book Your Free Strategy Call</a>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">✓ 10+ iGaming Clients</div>
+                <div class="trust-badge">✓ UK & EU Markets</div>
+                <div class="trust-badge">✓ Performance-First Approach</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Marketing an iGaming Brand Is Different</h2>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>🚫 Compliance Restrictions</h3>
+                    <p>Most platforms ban gambling ads. You need specialist knowledge to navigate regulations across UK, EU, and other markets.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>💰 Rising CPA Costs</h3>
+                    <p>Player acquisition costs keep climbing. Generic marketing agencies don't understand how to optimize for iGaming profitability.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>🎯 Platform Ad Bans</h3>
+                    <p>Google, Facebook, and others have strict gambling ad policies. You need an agency that knows how to work within these constraints.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <h3>📊 Player Retention</h3>
+                    <p>Acquiring players is just step one. You need marketing that drives lifetime value, not just first deposits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">How We Help iGaming Brands Grow</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Performance Marketing</h3>
+                    <p>PPC campaigns, affiliate partnerships, and paid acquisition channels that drive profitable player growth.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>SEO & Content</h3>
+                    <p>Rank for competitive iGaming keywords. Content strategies that build authority and drive organic traffic.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media & Influencers</h3>
+                    <p>Build communities, work with gambling influencers, and create viral content that converts.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Analytics & CRO</h3>
+                    <p>Track every player touchpoint. Optimize conversion rates. Make data-driven decisions that improve ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <div class="form-container">
+                <h2>Get Your Free iGaming Marketing Audit</h2>
+                <p>Let's discuss how we can help you acquire players profitably</p>
+                
+                <form id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    
+                    <input type="hidden" name="subject" value="New iGaming Marketing Lead">
+                    <input type="hidden" name="redirect" value="https://greathornbills.com/thank-you.html">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="url" id="website" name="website" placeholder="https://your-casino.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us about your goals (optional)</label>
+                        <textarea id="message" name="message" placeholder="e.g., We want to increase player acquisition in the UK market..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button" style="width: 100%;">Request My Free Audit</button>
+                    
+                    <p class="form-note">Alex Morgan, Business Development Director, will personally review your request within 24 hours.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Great Hornbills. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="mailto:hello@greathornbills.com">hello@greathornbills.com</a> | 
+                <a href="/">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Capture and store UTM parameters in form
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('utm_source').value = urlParams.get('utm_source') || 'direct';
+            document.getElementById('utm_medium').value = urlParams.get('utm_medium') || 'none';
+            document.getElementById('utm_campaign').value = urlParams.get('utm_campaign') || 'none';
+        });
+        
+        // Form submission tracking
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            // Track form submission in GA4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'currency': 'GBP',
+                    'value': 50.00,
+                    'lead_source': 'igaming_landing_page'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
