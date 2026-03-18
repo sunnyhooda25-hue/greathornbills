@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Service Digital Marketing Agency | Great Hornbills - Scale Your Brand</title>
+    <meta name="description" content="Full-service digital marketing agency for growing brands. Performance marketing, SEO, content, video, social media & analytics. 500M+ impressions generated.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../favicon.ico">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8T78B119F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G8T78B119F');
+    </script>
+    
+    <style>
+        :root {
+            --primary: #FF0050;
+            --primary-dark: #cc0040;
+            --bg-dark: #0a0a0a;
+            --bg-darker: #000000;
+            --text-white: #ffffff;
+            --text-light: #b0b0b0;
+            --text-muted: #6b7280;
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-primary); background: var(--bg-dark); color: var(--text-white); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        header { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo { font-size: 20px; font-weight: 700; color: var(--text-white); text-decoration: none; }
+        
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero .highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p { font-size: 22px; color: var(--text-light); max-width: 800px; margin: 0 auto 40px; }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,0,80,0.4); }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 42px; font-weight: 800; color: var(--primary); display: block; }
+        .stat-label { font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        
+        .services {
+            padding: 80px 0;
+            background: var(--bg-darker);
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--bg-dark);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+        .service-icon { font-size: 36px; margin-bottom: 20px; }
+        .service-card h3 { font-size: 22px; margin-bottom: 15px; }
+        .service-card p { color: var(--text-light); line-height: 1.7; margin-bottom: 15px; }
+        .service-card ul { list-style: none; }
+        .service-card li { padding: 8px 0; padding-left: 25px; position: relative; color: var(--text-light); font-size: 15px; }
+        .service-card li:before { content: "→"; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+        
+        .form-section {
+            padding: 100px 0;
+            background: var(--bg-darker);
+        }
+        
+        .form-wrapper { max-width: 600px; margin: 0 auto; }
+        .form-wrapper h2 { font-family: var(--font-display); font-size: 42px; text-align: center; margin-bottom: 40px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg-dark);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: var(--text-white);
+            font-family: inherit;
+            font-size: 16px;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+        textarea { min-height: 100px; resize: vertical; }
+        button[type="submit"] {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button[type="submit"]:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer a { color: var(--primary); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .section-title { font-size: 32px; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">great hornbills</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Digital-First Marketing <span class="highlight">At Scale</span></h1>
+            <p>Full-service digital marketing agency driving brand growth through data-driven strategies, creative excellence, and performance-focused execution</p>
+            <a href="#form" class="cta-btn">Let's Connect</a>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">500M+</span>
+                    <span class="stat-label">Impressions Generated</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30-40%</span>
+                    <span class="stat-label">CAC Reduction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Full-Stack</span>
+                    <span class="stat-label">Marketing Partner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Everything You Need to Grow Your Brand</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>Performance Marketing</h3>
+                    <p>Paid acquisition channels that drive measurable ROI</p>
+                    <ul>
+                        <li>Google Ads & Shopping</li>
+                        <li>Meta & LinkedIn Ads</li>
+                        <li>Programmatic Display</li>
+                        <li>Affiliate Marketing</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>SEO & Content Marketing</h3>
+                    <p>Rank higher, drive organic traffic, build authority</p>
+                    <ul>
+                        <li>Technical SEO Audits</li>
+                        <li>Content Strategy & Creation</li>
+                        <li>Link Building</li>
+                        <li>On-Page Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎥</div>
+                    <h3>Video Production</h3>
+                    <p>High-quality video content that converts</p>
+                    <ul>
+                        <li>Brand Videos</li>
+                        <li>Product Demos</li>
+                        <li>Social Media Content</li>
+                        <li>Animation & Motion Graphics</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Build communities and drive engagement</p>
+                    <ul>
+                        <li>Strategy & Planning</li>
+                        <li>Content Creation</li>
+                        <li>Community Management</li>
+                        <li>Influencer Partnerships</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Branding & Design</h3>
+                    <p>Stand out with memorable brand identity</p>
+                    <ul>
+                        <li>Brand Strategy</li>
+                        <li>Logo & Visual Identity</li>
+                        <li>Website Design</li>
+                        <li>Creative Assets</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data & Analytics</h3>
+                    <p>Make smarter decisions with actionable insights</p>
+                    <ul>
+                        <li>Marketing Attribution</li>
+                        <li>Dashboard Setup</li>
+                        <li>Performance Reporting</li>
+                        <li>Conversion Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="form-section" id="form">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2>Start Growing Your Brand</h2>
+                
+                <form action="https://formspree.io/f/xyzgvqkw" method="POST">
+                    <input type="hidden" name="subject" value="Full-Service Digital Marketing Inquiry">
+                    <input type="hidden" name="redirect" value="https://greathornbills.com/thank-you.html">
+                    <input type="hidden" name="_landing_page" value="full-service-digital-marketing">
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="url" id="website" name="website" placeholder="https://yourcompany.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="services">Services Interested In</label>
+                        <select id="services" name="services">
+                            <option value="">Select primary interest</option>
+                            <option value="performance">Performance Marketing</option>
+                            <option value="seo">SEO & Content</option>
+                            <option value="video">Video Production</option>
+                            <option value="social">Social Media</option>
+                            <option value="branding">Branding & Design</option>
+                            <option value="full-service">Full-Service Partnership</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us about your goals</label>
+                        <textarea id="message" name="message" placeholder="What are you looking to achieve?"></textarea>
+                    </div>
+                    
+                    <button type="submit">Request Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Great Hornbills. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="mailto:hello@greathornbills.com">hello@greathornbills.com</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', { 'page_title': 'Full-Service Digital Marketing' });
+        }
+        document.querySelector('form').addEventListener('submit', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', { 'lead_source': 'full_service_lp' });
+            }
+        });
+    </script>
+</body>
+</html>

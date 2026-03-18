@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Marketing for B2B SaaS | Great Hornbills - Reduce CAC by 30-40%</title>
+    <meta name="description" content="Performance marketing agency specializing in B2B SaaS companies. Reduce customer acquisition costs by 30-40% with data-driven paid acquisition strategies.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../favicon.ico">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8T78B119F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-G8T78B119F');
+    </script>
+    
+    <style>
+        :root {
+            --primary: #FF0050;
+            --primary-dark: #cc0040;
+            --bg-dark: #0a0a0a;
+            --bg-darker: #000000;
+            --text-white: #ffffff;
+            --text-light: #b0b0b0;
+            --text-muted: #6b7280;
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo { font-size: 20px; font-weight: 700; color: var(--text-white); text-decoration: none; }
+        
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero .highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,0,80,0.4);
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Services */
+        .services {
+            padding: 80px 0;
+            background: var(--bg-darker);
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: var(--bg-dark);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--text-white);
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Process */
+        .process {
+            padding: 80px 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            color: var(--text-light);
+        }
+        
+        /* Form Section */
+        .form-section {
+            padding: 100px 0;
+            background: var(--bg-darker);
+        }
+        
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-wrapper h2 {
+            font-family: var(--font-display);
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg-dark);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            color: var(--text-white);
+            font-family: inherit;
+            font-size: 16px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        textarea { min-height: 100px; resize: vertical; }
+        
+        button[type="submit"] {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button[type="submit"]:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        footer a { color: var(--primary); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .section-title { font-size: 32px; }
+            .stats { gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">great hornbills</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Performance Marketing<br>for <span class="highlight">B2B SaaS Companies</span></h1>
+            <p>Reduce customer acquisition costs by 30-40% with data-driven paid acquisition strategies that actually work</p>
+            <a href="#form" class="cta-btn">Get Your Free Strategy Call</a>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">30-40%</span>
+                    <span class="stat-label">CAC Reduction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3-5x</span>
+                    <span class="stat-label">ROAS Improvement</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">90 Days</span>
+                    <span class="stat-label">To Results</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">What We Do for B2B SaaS Companies</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎯 Paid Search (Google Ads)</h3>
+                    <p>Exact-match keyword targeting, aggressive bid management, and conversion-optimized landing pages that reduce CPA</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>📱 Paid Social (LinkedIn, Meta)</h3>
+                    <p>Account-based marketing campaigns targeting decision-makers at your ideal customer companies</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>📊 Analytics & Attribution</h3>
+                    <p>Multi-touch attribution modeling to understand which channels drive real pipeline and revenue</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🔄 Conversion Rate Optimization</h3>
+                    <p>Landing page A/B testing, funnel optimization, and on-page improvements that boost lead quality</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>📈 Performance Reporting</h3>
+                    <p>Weekly dashboards showing CAC, ROAS, pipeline value, and revenue attribution by channel</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>⚙️ Marketing Automation</h3>
+                    <p>Lead scoring, nurture sequences, and automated workflows that turn MQLs into SQLs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">How We Work</h2>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Audit & Analyze</h3>
+                    <p>Deep dive into your current campaigns, funnel metrics, and customer acquisition data</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Strategy & Planning</h3>
+                    <p>Build a custom performance marketing roadmap based on your ICP and revenue goals</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Launch & Optimize</h3>
+                    <p>Execute campaigns, test variations, and continuously optimize based on performance data</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Scale What Works</h3>
+                    <p>Double down on winning channels and tactics while cutting underperformers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="form-section" id="form">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2>Book Your Free Strategy Call</h2>
+                
+                <form action="https://formspree.io/f/xyzgvqkw" method="POST">
+                    <input type="hidden" name="subject" value="Performance Marketing Inquiry - B2B SaaS">
+                    <input type="hidden" name="redirect" value="https://greathornbills.com/thank-you.html">
+                    <input type="hidden" name="_landing_page" value="performance-marketing-saas">
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="website">Website URL</label>
+                        <input type="url" id="website" name="website" placeholder="https://yourcompany.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Current Monthly Marketing Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select range</option>
+                            <option value="<10k">Under $10,000</option>
+                            <option value="10k-25k">$10,000 - $25,000</option>
+                            <option value="25k-50k">$25,000 - $50,000</option>
+                            <option value="50k+">$50,000+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">What's your biggest challenge?</label>
+                        <textarea id="message" name="message" placeholder="e.g., High CAC, low conversion rates, difficulty scaling paid channels..."></textarea>
+                    </div>
+                    
+                    <button type="submit">Request Strategy Call</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2026 Great Hornbills. All rights reserved.</p>
+            <p style="margin-top: 10px;"><a href="mailto:hello@greathornbills.com">hello@greathornbills.com</a></p>
+        </div>
+    </footer>
+    
+    <script>
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                'page_title': 'Performance Marketing for B2B SaaS',
+                'page_location': window.location.href
+            });
+        }
+        
+        document.querySelector('form').addEventListener('submit', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'lead_source': 'performance_marketing_saas_lp'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
