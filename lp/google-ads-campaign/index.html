@@ -657,6 +657,43 @@
             display: none !important;
         }
     </style>
+    <!-- Google Ads Conversion Tracking -->
+    <script>
+      // Capture UTM parameters
+      function getURLParameter(name) {
+        return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/+/g, "%20")) || null;
+      }
+      
+      // Store UTM params
+      const utmParams = {
+        source: getURLParameter("utm_source"),
+        medium: getURLParameter("utm_medium"),
+        campaign: getURLParameter("utm_campaign"),
+        term: getURLParameter("utm_term"),
+        content: getURLParameter("utm_content"),
+        gclid: getURLParameter("gclid")
+      };
+      
+      // Track form submission
+      function trackConversion() {
+        // GA4 Event
+        gtag("event", "generate_lead", {
+          currency: "INR",
+          value: 1500,
+          lead_source: utmParams.source || "direct",
+          campaign: utmParams.campaign || "none"
+        });
+        
+        // Google Ads Conversion (add your conversion ID)
+        // gtag("event", "conversion", {
+        //   send_to: "AW-XXXXXXXXX/CONVERSION_LABEL",
+        //   value: 1500,
+        //   currency: "INR"
+        // });
+        
+        return true;
+      }
+    </script>
 </head>
 <body>
     <!-- Header -->
