@@ -6,7 +6,7 @@
     <title>Modern Website in 5 Days | Great Hornbills</title>
     <meta name="description" content="Get a modern, high-converting website in just 5 days. Under $1000. No lengthy timelines. No bloated costs.">
     <link rel="icon" type="image/svg+xml" href="https://greathornbills.com/favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,34 +15,29 @@
         }
 
         :root {
-            --primary: #7C3AED;
-            --primary-light: #9F67FF;
-            --secondary: #22c55e;
-            --secondary-light: #4ade80;
-            --accent: #10B981;
-            --dark: #0f0f0f;
-            --dark-lighter: #1a1a1a;
-            --dark-card: #1a1a2e;
-            --dark-card-alt: #16213e;
-            --gray-600: #6b7280;
-            --gray-400: #9ca3af;
-            --gray-300: #d1d5db;
-            --white: #ffffff;
-            --gradient-primary: linear-gradient(90deg, #7C3AED, #9F67FF);
-            --gradient-secondary: linear-gradient(90deg, #22c55e, #4ade80);
-            --gradient-bg: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+            --primary: #E91E63;
+            --primary-dark: #C2185B;
+            --primary-light: #F06292;
+            --bg-dark: #1A1A1A;
+            --bg-card: #282828;
+            --bg-card-hover: #333333;
+            --text-primary: #FCFCFC;
+            --text-secondary: #B0B0B0;
+            --text-muted: #808080;
+            --border-subtle: rgba(255,255,255,0.1);
+            --white: #FFFFFF;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--gradient-bg);
-            color: var(--white);
+            background: var(--bg-dark);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -50,8 +45,8 @@
         /* Header */
         header {
             padding: 20px 0;
-            background: var(--dark);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: var(--bg-dark);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
         .header-inner {
@@ -61,81 +56,65 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
             text-decoration: none;
         }
 
         .header-cta {
-            background: var(--gradient-primary);
-            color: white;
+            background: var(--primary);
+            color: var(--white);
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: background 0.2s;
         }
 
         .header-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+            background: var(--primary-dark);
         }
 
         /* Hero Section */
         .hero {
-            padding: 80px 0;
+            padding: 80px 0 60px;
             text-align: center;
-            position: relative;
-            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a2e 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .badge {
             display: inline-block;
-            background: rgba(124, 58, 237, 0.15);
-            border: 1px solid rgba(124, 58, 237, 0.3);
-            color: var(--primary-light);
-            padding: 8px 16px;
+            background: rgba(233, 30, 99, 0.1);
+            border: 1px solid rgba(233, 30, 99, 0.3);
+            color: var(--primary);
+            padding: 8px 18px;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.15;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
             margin-bottom: 20px;
-            max-width: 800px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .hero h1 span {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .hero p {
-            font-size: 1.15rem;
-            color: var(--gray-400);
-            max-width: 550px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 520px;
             margin: 0 auto 36px;
         }
 
@@ -147,42 +126,40 @@
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
+            background: var(--primary);
+            color: var(--white);
             padding: 16px 32px;
-            border-radius: 10px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: background 0.2s;
             border: none;
             cursor: pointer;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.35);
+            background: var(--primary-dark);
         }
 
         .btn-secondary {
             background: transparent;
-            color: white;
+            color: var(--text-primary);
             padding: 16px 32px;
-            border-radius: 10px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid var(--text-primary);
             transition: all 0.2s;
             cursor: pointer;
         }
 
         .btn-secondary:hover {
-            border-color: var(--primary);
-            background: rgba(124, 58, 237, 0.1);
+            background: rgba(255,255,255,0.05);
         }
 
         /* Stats */
@@ -192,9 +169,8 @@
             gap: 24px;
             margin-top: 60px;
             padding: 32px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.08);
+            background: var(--bg-card);
+            border-radius: 12px;
         }
 
         .stat {
@@ -202,13 +178,14 @@
         }
 
         .stat-value {
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent);
+            font-weight: 700;
+            color: var(--primary);
         }
 
         .stat-label {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             font-size: 0.9rem;
             margin-top: 4px;
         }
@@ -216,14 +193,14 @@
         /* Problem Section */
         .problem {
             padding: 80px 0;
-            background: var(--dark);
         }
 
         .problem h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.75rem;
             text-align: center;
             margin-bottom: 40px;
-            color: var(--gray-300);
+            color: var(--text-primary);
         }
 
         .problem h2 span {
@@ -232,14 +209,13 @@
 
         .problems-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
 
         .problem-card {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.02));
-            border: 1px solid rgba(239, 68, 68, 0.15);
-            border-radius: 16px;
+            background: var(--bg-card);
+            border-radius: 12px;
             padding: 28px;
         }
 
@@ -251,11 +227,11 @@
         .problem-card h3 {
             font-size: 1.1rem;
             margin-bottom: 8px;
-            color: #fca5a5;
+            color: var(--text-primary);
         }
 
         .problem-card p {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.5;
         }
@@ -263,10 +239,11 @@
         /* Solution Section */
         .solution {
             padding: 80px 0;
-            background: linear-gradient(180deg, #1a1a1a 0%, #1a1a2e 100%);
+            background: var(--bg-card);
         }
 
         .solution h2 {
+            font-family: 'Playfair Display', serif;
             font-size: clamp(1.75rem, 4vw, 2.25rem);
             text-align: center;
             margin-bottom: 12px;
@@ -274,8 +251,8 @@
 
         .solution > .container > p {
             text-align: center;
-            color: var(--gray-400);
-            max-width: 500px;
+            color: var(--text-secondary);
+            max-width: 480px;
             margin: 0 auto 40px;
             font-size: 1rem;
         }
@@ -287,23 +264,21 @@
         }
 
         .feature-card {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
+            background: var(--bg-dark);
+            border-radius: 12px;
             padding: 32px 28px;
-            transition: all 0.3s;
+            transition: transform 0.2s;
         }
 
         .feature-card:hover {
-            border-color: rgba(124, 58, 237, 0.3);
             transform: translateY(-4px);
         }
 
         .feature-icon {
             width: 48px;
             height: 48px;
-            background: var(--gradient-primary);
-            border-radius: 12px;
+            background: var(--primary);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -314,11 +289,11 @@
         .feature-card h3 {
             font-size: 1.1rem;
             margin-bottom: 10px;
-            color: var(--white);
+            color: var(--text-primary);
         }
 
         .feature-card p {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             font-size: 0.9rem;
             line-height: 1.5;
         }
@@ -326,7 +301,6 @@
         /* Quote Form Section */
         .quote-section {
             padding: 80px 0;
-            background: var(--dark);
         }
 
         .quote-container {
@@ -337,12 +311,13 @@
         }
 
         .quote-content h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
             margin-bottom: 14px;
         }
 
         .quote-content p {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             font-size: 1rem;
             margin-bottom: 28px;
         }
@@ -357,38 +332,37 @@
             gap: 12px;
             margin-bottom: 14px;
             font-size: 0.95rem;
-            color: var(--gray-300);
+            color: var(--text-primary);
         }
 
         .quote-benefits .check {
             width: 22px;
             height: 22px;
-            background: var(--gradient-secondary);
+            background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.7rem;
             flex-shrink: 0;
-            color: #000;
-            font-weight: bold;
+            color: var(--white);
         }
 
         .quote-form {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
+            background: var(--bg-card);
+            border-radius: 12px;
             padding: 40px;
         }
 
         .quote-form h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.35rem;
             margin-bottom: 6px;
             text-align: center;
         }
 
         .quote-form > p {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             text-align: center;
             margin-bottom: 28px;
             font-size: 0.9rem;
@@ -409,10 +383,10 @@
         .form-group select {
             width: 100%;
             padding: 14px 16px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            color: white;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            color: var(--text-primary);
             font-size: 1rem;
             font-family: inherit;
             transition: border-color 0.2s;
@@ -425,15 +399,15 @@
         }
 
         .form-group input::placeholder {
-            color: var(--gray-600);
+            color: var(--text-muted);
         }
 
         .form-group select option {
-            background: #1a1a2e;
+            background: var(--bg-dark);
         }
 
         .form-group small {
-            color: var(--gray-600);
+            color: var(--text-muted);
             font-size: 0.8rem;
             margin-top: 4px;
             display: block;
@@ -448,53 +422,40 @@
         .final-cta {
             padding: 100px 0;
             text-align: center;
-            background: linear-gradient(180deg, #1a1a2e 0%, #0f0f0f 100%);
-            position: relative;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
-            pointer-events: none;
+            background: var(--bg-card);
         }
 
         .final-cta h2 {
-            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             margin-bottom: 14px;
-            max-width: 700px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .final-cta p {
-            color: var(--gray-400);
-            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
             margin-bottom: 32px;
         }
 
         /* Footer */
         footer {
             padding: 32px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid var(--border-subtle);
             text-align: center;
-            color: var(--gray-600);
+            color: var(--text-muted);
             font-size: 0.85rem;
-            background: var(--dark);
         }
 
         footer a {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             text-decoration: none;
         }
 
         footer a:hover {
-            color: var(--primary-light);
+            color: var(--primary);
         }
 
         /* Form Success State */
@@ -506,23 +467,24 @@
         .form-success .check-big {
             width: 70px;
             height: 70px;
-            background: var(--gradient-secondary);
+            background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
             margin: 0 auto 20px;
-            color: #000;
+            color: var(--white);
         }
 
         .form-success h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.35rem;
             margin-bottom: 10px;
         }
 
         .form-success p {
-            color: var(--gray-400);
+            color: var(--text-secondary);
             margin-bottom: 20px;
         }
 
@@ -560,11 +522,12 @@
             }
 
             .header-cta {
-                display: none;
+                padding: 10px 16px;
+                font-size: 0.85rem;
             }
 
             .hero {
-                padding: 60px 0;
+                padding: 60px 0 40px;
             }
         }
     </style>
@@ -574,7 +537,7 @@
     <header>
         <div class="container header-inner">
             <a href="https://greathornbills.com" class="logo">Great Hornbills</a>
-            <a href="https://calendly.com/admin-greathornbills/30min" target="_blank" class="header-cta">Book a Call →</a>
+            <a href="https://calendly.com/admin-greathornbills/30min" target="_blank" class="header-cta">Book a Call</a>
         </div>
     </header>
 
@@ -586,7 +549,7 @@
             <p>Stop losing customers to outdated design. Get a fast, mobile-optimized website built to grow your business. Under $1,000.</p>
             <div class="hero-ctas">
                 <a href="https://calendly.com/admin-greathornbills/30min" target="_blank" class="btn-primary">
-                    📞 Book a Free Strategy Call
+                    Book a Free Strategy Call
                 </a>
                 <a href="#quote-form" class="btn-secondary">
                     Request a Quote
@@ -739,7 +702,7 @@
                     <h3>Quote Request Received!</h3>
                     <p>We'll review your details and get back to you within 24 hours.</p>
                     <a href="https://calendly.com/admin-greathornbills/30min" target="_blank" class="btn-primary">
-                        📞 Book Your Call Now
+                        Book Your Call Now
                     </a>
                 </div>
             </div>
@@ -752,7 +715,7 @@
             <h2>Don't Let Another Day Go By With a Website That Doesn't Convert</h2>
             <p>Book a free strategy call and see how we can transform your online presence.</p>
             <a href="https://calendly.com/admin-greathornbills/30min" target="_blank" class="btn-primary">
-                📞 Book a Free Call — No Obligation
+                Book a Free Call — No Obligation
             </a>
         </div>
     </section>
@@ -766,20 +729,11 @@
 
     <script>
         document.getElementById('hasWebsite').addEventListener('change', function() {
-            const urlGroup = document.getElementById('websiteUrlGroup');
-            urlGroup.style.display = this.value === 'yes' ? 'block' : 'none';
+            document.getElementById('websiteUrlGroup').style.display = this.value === 'yes' ? 'block' : 'none';
         });
 
         document.getElementById('quoteForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                hasWebsite: document.getElementById('hasWebsite').value,
-                website: document.getElementById('website').value
-            };
-            console.log('Form submitted:', formData);
             document.getElementById('quoteForm').classList.add('hidden');
             document.getElementById('formSuccess').classList.remove('hidden');
             document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth', block: 'center' });
