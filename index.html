@@ -4375,5 +4375,101 @@
     })();
   </script>
 
+  <!-- Fix broken sections + scroll animations -->
+  <style>
+    /* Fix feature-1: hide broken phone video/frame, show dashboard instead */
+    .feature-1_video-item video { display: none !important; }
+    .feature-1_video-item {
+      background: url('/assets/work/screen-dashboard.png') center/cover no-repeat;
+      min-height: 400px;
+      border-radius: 1.5rem;
+    }
+    .feature-1_phone-frame[src*="phone-frame"] { display: none !important; }
+    .feature-1_video-image-bg[src*="automation-bg"] { display: none !important; }
+
+    /* Fix CTA section: replace missing cta-3d.png with gradient decoration */
+    .cta_right-image[src*="cta-3d"] { display: none !important; }
+    .cta_right {
+      background: radial-gradient(circle at 60% 40%, rgba(255,255,255,0.15) 0%, transparent 60%);
+      min-height: 300px;
+      position: relative;
+    }
+    .cta_right::after {
+      content: '→';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 6rem;
+      color: rgba(255,255,255,0.1);
+      font-weight: 800;
+    }
+
+    /* Fix header CTA to be clickable */
+    header.button.primary.is-black { cursor: pointer; }
+
+    /* Fix all inline opacity:0 elements */
+    [data-w-id][style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }
+
+    /* Scroll animation styles */
+    .gh-reveal {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .gh-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <script>
+    // Make header CTA clickable (opens contact form)
+    document.querySelectorAll('header.button.primary.is-black').forEach(function(el) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function() {
+        var modal = document.querySelector('.gh-contact-modal');
+        if (modal) modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Scroll-triggered fade-in animations
+    (function() {
+      // Add .gh-reveal to all major content blocks
+      var selectors = [
+        '.heading-style-h1', '.benefits_text', '.imagine_layout',
+        '.vision_layout', '.vision_bottom-column',
+        '.feature-1_top', '.feature-1_graphic-container', '.feature-1_aside-left', '.feature-1_aside-right',
+        '.feature-2_headline', '.feature-2_text',
+        '.people_item-header', '.people_item-subheader', '.people_background-container',
+        '.reviews_title', '.swiper-slide.is-review',
+        '.gh-work-header', '.gh-work-devices',
+        '.cta_left', '.cta_right',
+        '.section_home-feature-2 h2', '.section_home-feature-2 p',
+        '[data-a-split]'
+      ];
+      selectors.forEach(function(sel) {
+        document.querySelectorAll(sel).forEach(function(el) {
+          if (!el.closest('.loader') && !el.closest('.gh-contact-modal')) {
+            el.classList.add('gh-reveal');
+          }
+        });
+      });
+
+      // IntersectionObserver for scroll animations
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.gh-reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
   </body>
 </html>
