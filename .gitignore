@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+*.backup
+*.backup2
+*.backup3
+*.backup4
+*.backup5
+healthytogether_source/
+www.healthytogether.co.zip
+website-repo/
+*.ai
+*.pdf
+website/node_modules/
+website/package.json
+website/package-lock.json
