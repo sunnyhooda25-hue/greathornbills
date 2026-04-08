@@ -2015,13 +2015,13 @@
             100% { transform: translateX(-50%); }
           }
 
-          /* ── Benefits section (blue card below hero) ── */
+          /* ── Benefits section (blue card with scroll-scale animation) ── */
           .section_home-benefits {
-            background-color: #ffffff !important;
+            background-color: var(--cream, #f5f3ff) !important;
             width: 100% !important;
-            height: auto !important;
+            height: 200vh !important;
             padding-top: 0 !important;
-            padding-bottom: 5rem !important;
+            padding-bottom: 0 !important;
             position: relative !important;
             margin-top: 0 !important;
             overflow: clip !important;
@@ -2033,18 +2033,19 @@
             color: #ffffff !important;
             border-radius: 2.625rem !important;
             flex-direction: column !important;
-            justify-content: space-around !important;
+            justify-content: center !important;
             align-items: center !important;
             width: 100% !important;
-            min-height: 80vh !important;
-            height: auto !important;
+            height: 100vh !important;
             margin-left: auto !important;
             margin-right: auto !important;
             display: flex !important;
-            position: relative !important;
+            position: sticky !important;
             top: 0 !important;
             overflow: hidden !important;
             z-index: 2 !important;
+            transform: scale(0.85) !important;
+            transform-origin: center top !important;
           }
 
           .benefits_top {
@@ -4381,8 +4382,29 @@
     })();
   </script>
 
-  <!-- Fallback: if GSAP animations fail, show hidden content after 3s -->
+  <!-- Benefits card scroll-scale animation + fallback -->
   <script>
+    // Benefits card: scale from 0.85 to 1.0 as you scroll through section
+    (function() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      var card = document.querySelector('.benefits_layout');
+      var section = document.querySelector('.section_home-benefits');
+      if (!card || !section) return;
+
+      gsap.to(card, {
+        scale: 1,
+        borderRadius: '0px',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.5
+        }
+      });
+    })();
+
+    // Fallback: if GSAP animations fail, show hidden content after 3s
     setTimeout(function() {
       document.querySelectorAll('[data-w-id]').forEach(function(el) {
         if (getComputedStyle(el).opacity === '0') {
