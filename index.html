@@ -2149,21 +2149,7 @@
             }
           }
 
-          /* ── Mobile: reduce benefits scroll height ── */
-          @media (max-width: 768px) {
-            .section_home-benefits {
-              height: auto !important;
-              min-height: 100vh !important;
-            }
-            .benefits_layout {
-              position: relative !important;
-              height: auto !important;
-              min-height: 80vh !important;
-              padding: 3rem 1.5rem !important;
-            }
-          }
-
-          /* ── Light-background sections (cream/lavender) ── */
+          /* ── Light-background sections (cream/lavender — match HT) ── */
           .section_home-reviews,
           .section_home-testimonials,
           .section_home-people,
@@ -2712,8 +2698,8 @@
             opacity: 0.5;
           }
           /* Crossfade animation */
-          .gh-slide-a { opacity: 1; }
-          .gh-slide-b { display: none; }
+          .gh-slide-a { animation: gh-xfade 8s ease-in-out infinite; }
+          .gh-slide-b { animation: gh-xfade 8s ease-in-out infinite; animation-delay: -4s; }
           @keyframes gh-xfade {
             0%, 42% { opacity: 1; }
             50%, 92% { opacity: 0; }
@@ -2769,7 +2755,7 @@
                 </div>
                 <div class="gh-laptop-screen">
                   <img src="/assets/work/screen-dashboard.png" alt="Campaign Performance Dashboard" class="gh-slide-a" />
-                  <img src="/assets/work/screen-dashboard.png" alt="Landing Page Builder" class="gh-slide-b" />
+                  <img src="/assets/work/screen-builder.png" alt="Landing Page Builder" class="gh-slide-b" />
                 </div>
                 <img src="/assets/work/macbook-frame.png" alt="" class="gh-laptop-frame" />
               </div>
@@ -2782,7 +2768,7 @@
                 <div class="gh-phone-screen">
                   <div class="gh-phone-notch"></div>
                   <img src="/assets/work/screen-dashboard.png" alt="Dashboard on mobile" class="gh-slide-a" />
-                  <img src="/assets/work/screen-dashboard.png" alt="Builder on mobile" class="gh-slide-b" />
+                  <img src="/assets/work/screen-builder.png" alt="Builder on mobile" class="gh-slide-b" />
                 </div>
               </div>
               <div class="gh-phone-home"></div>
@@ -4385,133 +4371,6 @@
           form.style.display = 'flex';
           success.style.display = 'none';
         }, 4000);
-      });
-    })();
-  </script>
-
-  <!-- Fix broken sections + scroll animations -->
-  <style>
-    /* Fix feature-1: CSS phone mockup with phone-screen image */
-    .feature-1_video-image-bg { display: none !important; }
-    .feature-1_phone-frame[src*="phone-frame"] { display: none !important; }
-    .feature-1_video-item video { display: none !important; }
-    .feature-1_video-container {
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-    }
-    .feature-1_video-frame {
-      position: relative !important;
-      width: 280px !important;
-      height: 560px !important;
-      background: #1a1a2e !important;
-      border-radius: 2.5rem !important;
-      padding: 12px !important;
-      box-shadow: 0 25px 80px rgba(0,0,0,0.4), inset 0 0 0 2px rgba(255,255,255,0.1) !important;
-    }
-    .feature-1_video-item {
-      width: 100% !important;
-      height: 100% !important;
-      border-radius: 2rem !important;
-      overflow: hidden !important;
-      background: url('/assets/work/phone-screen.webp') center top/cover no-repeat !important;
-    }
-    .feature-1_video-frame::before {
-      content: '';
-      position: absolute;
-      top: 12px; left: 50%;
-      transform: translateX(-50%);
-      width: 80px; height: 24px;
-      background: #1a1a2e;
-      border-radius: 0 0 1rem 1rem;
-      z-index: 2;
-    }
-    @media (max-width: 768px) {
-      .feature-1_video-frame {
-        width: 220px !important;
-        height: 440px !important;
-      }
-    }
-
-    /* Fix CTA section: use real cta-3d.webp */
-    .cta_right-image[src*="cta-3d.png"] { display: none !important; }
-    .cta_right {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-    .cta_right::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      min-height: 300px;
-      background: url('/assets/work/cta-3d.webp') center/contain no-repeat;
-    }
-
-    /* Fix header CTA to be clickable */
-    header.button.primary.is-black { cursor: pointer; }
-
-    /* Fix all inline opacity:0 elements */
-    [data-w-id][style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }
-
-    /* Scroll animation styles */
-    .gh-reveal {
-      opacity: 0;
-      transform: translateY(2rem);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .gh-reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-
-  <script>
-    // Make header CTA clickable (opens contact form)
-    document.querySelectorAll('header.button.primary.is-black').forEach(function(el) {
-      el.style.cursor = 'pointer';
-      el.addEventListener('click', function() {
-        var modal = document.querySelector('.gh-contact-modal');
-        if (modal) modal.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    // Scroll-triggered fade-in animations
-    (function() {
-      // Add .gh-reveal to all major content blocks
-      var selectors = [
-        '.heading-style-h1', '.benefits_text', '.imagine_layout',
-        '.vision_layout', '.vision_bottom-column',
-        '.feature-1_top', '.feature-1_graphic-container', '.feature-1_aside-left', '.feature-1_aside-right',
-        '.feature-2_headline', '.feature-2_text',
-        '.people_item-header', '.people_item-subheader', '.people_background-container',
-        '.reviews_title', '.swiper-slide.is-review',
-        '.gh-work-header', '.gh-work-devices',
-        '.cta_left', '.cta_right',
-        '.section_home-feature-2 h2', '.section_home-feature-2 p',
-        '[data-a-split]'
-      ];
-      selectors.forEach(function(sel) {
-        document.querySelectorAll(sel).forEach(function(el) {
-          if (!el.closest('.loader') && !el.closest('.gh-contact-modal')) {
-            el.classList.add('gh-reveal');
-          }
-        });
-      });
-
-      // IntersectionObserver for scroll animations
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-      document.querySelectorAll('.gh-reveal').forEach(function(el) {
-        observer.observe(el);
       });
     })();
   </script>
