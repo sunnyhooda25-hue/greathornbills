@@ -4384,12 +4384,16 @@
 
   <!-- Benefits card scroll-scale animation + fallback -->
   <script>
-    // Benefits card: scale from 0.85 to 1.0 as you scroll through section
+    // Benefits card: full width → small card as you scroll
     (function() {
       if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
       var card = document.querySelector('.benefits_layout');
       var section = document.querySelector('.section_home-benefits');
       if (!card || !section) return;
+
+      // Force ScrollTrigger to use native scroll (bypass Lenis)
+      ScrollTrigger.defaults({ scroller: window });
+      window.addEventListener('scroll', function() { ScrollTrigger.update(); });
 
       gsap.to(card, {
         scale: 0.85,
@@ -4399,7 +4403,8 @@
           trigger: section,
           start: 'top top',
           end: 'bottom bottom',
-          scrub: 0.5
+          scrub: 0.3,
+          invalidateOnRefresh: true
         }
       });
     })();
