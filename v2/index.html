@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Great Hornbills | Technical Luxury Marketing Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0e0e13;
+            color: #f9f5fd;
+            scroll-behavior: smooth;
+        }
+        .faq-answer { max-height: 0; }
+        .faq-answer.open { max-height: 200px; }
+        .text-glow {
+            text-shadow: 0 0 12px rgba(197, 255, 61, 0.3);
+        }
+        .glass-panel {
+            background: rgba(25, 25, 31, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#55545b",
+                      "secondary-fixed": "#e6ea5a",
+                      "surface-bright": "#2c2b33",
+                      "surface-variant": "#25252d",
+                      "on-secondary-container": "#fcff78",
+                      "on-secondary-fixed": "#404200",
+                      "on-primary-fixed": "#364b00",
+                      "tertiary-fixed": "#fde74f",
+                      "on-error-container": "#ffd2c8",
+                      "error-container": "#b92902",
+                      "primary-fixed": "#c4fe3c",
+                      "on-surface": "#f9f5fd",
+                      "on-surface-variant": "#acaab1",
+                      "surface": "#0e0e13",
+                      "on-primary-fixed-variant": "#4d6a00",
+                      "primary": "#c4fe3c",
+                      "secondary-dim": "#d8db4d",
+                      "on-primary": "#455f00",
+                      "tertiary-fixed-dim": "#eed942",
+                      "surface-dim": "#0e0e13",
+                      "on-primary-container": "#354a00",
+                      "background": "#0e0e13",
+                      "error-dim": "#d53d18",
+                      "inverse-primary": "#4c6800",
+                      "surface-container-high": "#1f1f26",
+                      "on-background": "#f9f5fd",
+                      "primary-container": "#a6de11",
+                      "primary-dim": "#b6ef2c",
+                      "on-error": "#450900",
+                      "surface-container-lowest": "#000000",
+                      "inverse-surface": "#fcf8ff",
+                      "on-tertiary-fixed": "#4a4100",
+                      "outline": "#76747b",
+                      "on-secondary-fixed-variant": "#5d5f00",
+                      "on-tertiary-container": "#5e5400",
+                      "tertiary-container": "#fde74f",
+                      "surface-container-highest": "#25252d",
+                      "on-secondary": "#535500",
+                      "on-tertiary-fixed-variant": "#695e00",
+                      "error": "#ff7351",
+                      "secondary-fixed-dim": "#d8db4d",
+                      "surface-tint": "#c4fe3c",
+                      "on-tertiary": "#675c00",
+                      "secondary-container": "#606200",
+                      "surface-container": "#19191f",
+                      "secondary": "#e6ea5a",
+                      "tertiary": "#fff4c0",
+                      "tertiary-dim": "#eed942",
+                      "surface-container-low": "#131319",
+                      "primary-fixed-dim": "#b6ef2c",
+                      "outline-variant": "#48474d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "1rem",
+                      "xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e13]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="water_drop">water_drop</span>
+<span class="text-2xl font-bold tracking-tighter text-white">Great Hornbills</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#c4fe3c] font-bold border-b-2 border-[#c4fe3c] pb-1 text-sm tracking-widest uppercase" href="#">Services</a>
+<a class="text-[#a0a0a8] hover:text-white transition-colors text-sm tracking-widest uppercase" href="#">Work</a>
+<a class="text-[#a0a0a8] hover:text-white transition-colors text-sm tracking-widest uppercase" href="#">About</a>
+<a class="text-[#a0a0a8] hover:text-white transition-colors text-sm tracking-widest uppercase" href="#">Resources</a>
+<a class="text-[#a0a0a8] hover:text-white transition-colors text-sm tracking-widest uppercase" href="#">Blog</a>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-lg text-on-surface font-semibold hover:text-primary transition-all duration-300 active:scale-95">Book a Call</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold shadow-[0_0_12px_rgba(197,255,61,0.3)] hover:scale-105 active:scale-95 transition-all">Get Free Audit</button>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Floating Actions) -->
+<div class="fixed right-6 bottom-24 flex flex-col gap-4 items-end z-40">
+<button class="bg-surface-container p-4 rounded-full shadow-[0_0_12px_rgba(197,255,61,0.3)] hover:scale-110 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<span class="text-[10px] uppercase tracking-[0.05em] font-bold text-primary">Book a Call</span>
+</button>
+<button class="bg-surface-container p-4 rounded-full shadow-[0_0_12px_rgba(197,255,61,0.3)] hover:scale-110 transition-transform flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="chat">chat</span>
+<span class="text-[10px] uppercase tracking-[0.05em] font-bold text-primary">WhatsApp</span>
+</button>
+</div>
+<!-- Hero Section -->
+<section class="pt-40 pb-24 px-12 max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="inline-block px-3 py-1 bg-surface-container-high text-primary rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">Growth Engineering Agency</span>
+<h1 class="text-6xl md:text-8xl font-bold tracking-[-0.04em] leading-[0.95] mb-8">
+                Websites that <span class="text-primary italic">convert.</span><br/>
+                Automations that <span class="text-primary italic">sell.</span><br/>
+                Campaigns that <span class="text-primary italic">scale.</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-xl">
+                We're marketers who build. Every website, workflow, and ad campaign is engineered for revenue — not vanity metrics.
+            </p>
+<div class="flex flex-wrap gap-6 mb-16">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-extrabold text-lg shadow-[0_0_20px_rgba(197,255,61,0.4)] hover:scale-105 active:scale-95 transition-all">Get a Free Growth Audit</button>
+<button class="px-8 py-4 rounded-lg font-bold text-lg border border-outline-variant/30 hover:bg-surface-variant transition-colors">See Our Work</button>
+</div>
+<div class="flex items-center gap-8 py-6 border-t border-outline-variant/10">
+<div class="flex flex-col">
+<span class="text-2xl font-bold text-white">$50M+</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant">Ad Spend managed</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/20"></div>
+<div class="flex flex-col">
+<span class="text-2xl font-bold text-white">100+</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant">Brands Scaled</span>
+</div>
+<div class="w-px h-8 bg-outline-variant/20"></div>
+<div class="flex flex-col">
+<span class="text-2xl font-bold text-white text-glow">4.7x</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant">Average ROAS</span>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/10 blur-3xl group-hover:bg-primary/20 transition-all"></div>
+<div class="relative bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-auto object-cover opacity-90" data-alt="Dark aesthetic analytics dashboard with glowing lime green growth charts and premium technical data visualization UI" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnGqB3nbRPKVFDp3rBkXmOCaGiMfGElH5HXY_9Ys0qW_WIyqgNFLhuPKW5geEdTCyq-fuGP2hRrUJykCItJe6su84H0_skZJs_f7OR8bX8yW341zFd_d1m4j2zzDZdbaIqPgNeoZOK4U_yHapEExLsEb9L6LI7Sek__d-JdBVR0TNS9Gi4uA8KgZGQUC1-DqsF122rDDg2i1fCcixxCSuLwmpb5L1p69LKRfvFTncUgaYqO2XaNDLKWYCtM3nIXNljZuxgXZOZxT4"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error-dim"></div>
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Marquee -->
+<section class="bg-surface-container-low py-12 overflow-hidden whitespace-nowrap">
+<p class="text-center text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-8">Trusted by brands that demand results</p>
+<div class="flex gap-20 items-center justify-center opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<span class="text-3xl font-bold tracking-tighter">GammaPlus</span>
+<span class="text-3xl font-bold tracking-tighter">GammaStack</span>
+<span class="text-3xl font-bold tracking-tighter">GammaSweep</span>
+<span class="text-3xl font-bold tracking-tighter">Tealayas</span>
+<span class="text-3xl font-bold tracking-tighter">Gogoonj</span>
+<span class="text-3xl font-bold tracking-tighter">Graame</span>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 px-12 max-w-[1440px] mx-auto">
+<div class="mb-20">
+<span class="text-primary font-bold text-sm tracking-[0.2em] uppercase">Core Capabilities</span>
+<h2 class="text-5xl md:text-6xl font-bold tracking-tighter mt-4 max-w-2xl">Three things we do better than anyone else.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="group bg-surface-container p-10 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all duration-500 hover:-translate-y-2">
+<div class="w-14 h-14 bg-surface-container-highest rounded-lg flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="web">web</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Websites That Convert</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Custom-built sites engineered by marketers. 3-5x conversion rates. Launched in 5 days.</p>
+<div class="flex items-end justify-between border-t border-outline-variant/10 pt-8">
+<div>
+<span class="block text-3xl font-bold text-primary">3.8x</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant">more conversions</span>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold text-sm" href="#">Explore web dev <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group bg-surface-container p-10 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all duration-500 hover:-translate-y-2">
+<div class="w-14 h-14 bg-surface-container-highest rounded-lg flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="monitoring">monitoring</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Campaigns That Scale</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Google, Meta, TikTok, LinkedIn ads. Full-funnel strategy. Profitable at scale.</p>
+<div class="flex items-end justify-between border-t border-outline-variant/10 pt-8">
+<div>
+<span class="block text-3xl font-bold text-primary">4.7x</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant">average ROAS</span>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold text-sm" href="#">Explore campaigns <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group bg-surface-container p-10 rounded-xl border border-outline-variant/5 hover:border-primary/20 transition-all duration-500 hover:-translate-y-2">
+<div class="w-14 h-14 bg-surface-container-highest rounded-lg flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary text-3xl" data-icon="smart_toy">smart_toy</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Automations That Sell</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">n8n, Make, Python, custom APIs. Lead workflows, CRM automation, AI agents.</p>
+<div class="flex items-end justify-between border-t border-outline-variant/10 pt-8">
+<div>
+<span class="block text-3xl font-bold text-primary">20+</span>
+<span class="text-[10px] uppercase tracking-wider text-on-surface-variant">hrs saved/week</span>
+</div>
+<a class="text-primary flex items-center gap-2 font-bold text-sm" href="#">Explore automations <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Big Numbers Stripe -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-12 grid grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="text-center">
+<h4 class="text-6xl md:text-7xl font-extrabold text-white mb-2">$50M+</h4>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Ad Spend Managed</p>
+</div>
+<div class="text-center">
+<h4 class="text-6xl md:text-7xl font-extrabold text-white mb-2">100+</h4>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Brands Scaled</p>
+</div>
+<div class="text-center">
+<h4 class="text-6xl md:text-7xl font-extrabold text-primary text-glow mb-2">4.7x</h4>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold">ROAS Average</p>
+</div>
+<div class="text-center">
+<h4 class="text-6xl md:text-7xl font-extrabold text-white mb-2">20+</h4>
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Hours Saved/Wk</p>
+</div>
+</div>
+</section>
+<!-- Our Process -->
+<section class="py-24 px-12 max-w-[1440px] mx-auto overflow-hidden">
+<div class="text-center mb-24">
+<span class="text-primary font-bold text-sm tracking-[0.2em] uppercase">The Framework</span>
+<h2 class="text-5xl md:text-6xl font-bold tracking-tighter mt-4">Built for velocity.</h2>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Timeline Line -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-outline-variant/20 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center mb-8 border-4 border-surface shadow-2xl">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="search">search</span>
+</div>
+<h5 class="text-xl font-bold mb-4">01. Discover</h5>
+<p class="text-on-surface-variant text-sm px-4">Audit of your technical debt and growth leakages.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center mb-8 border-4 border-surface shadow-2xl">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="architecture">architecture</span>
+</div>
+<h5 class="text-xl font-bold mb-4">02. Strategize</h5>
+<p class="text-on-surface-variant text-sm px-4">Engineer a custom roadmap focused on ROI.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center mb-8 border-4 border-surface shadow-2xl">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="code">code</span>
+</div>
+<h5 class="text-xl font-bold mb-4">03. Build</h5>
+<p class="text-on-surface-variant text-sm px-4">Rapid deployment of sites and automations.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-highest rounded-full flex items-center justify-center mb-8 border-4 border-surface shadow-2xl">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h5 class="text-xl font-bold mb-4">04. Scale</h5>
+<p class="text-on-surface-variant text-sm px-4">Aggressive ad deployment and optimization.</p>
+</div>
+</div>
+</section>
+<!-- Case Studies -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto px-12">
+<div class="flex justify-between items-end mb-20">
+<div>
+<span class="text-primary font-bold text-sm tracking-[0.2em] uppercase">Results First</span>
+<h2 class="text-5xl md:text-6xl font-bold tracking-tighter mt-4">Case Studies</h2>
+</div>
+<button class="text-white border-b-2 border-primary pb-1 font-bold">View all results</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="High-end fashion e-commerce website showing minimalist photography and clean typography on a laptop screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_GWX5EcvhRR_3fvHB0fL1JcIP0FJ_IxOMyWkbjGv1KiXlVqdZ_2pu5w1QnjSuqjQZO9xEyBlw1DP_ueLH1GDJ-RJA5qpg3_8U_XqlzNJf1rg2iQsfuO1ckAJJ2ISfbOepOq3rcYSVi0xIRLwrSbS82GzH9uADFTXQEyiryinTM6x_wepOCAQbV7Aj_IjDSGjz1RnAt-GMqtMMmwZzFnzve2eseO3f15qdXJyhKH1ylbifq4iHAMnjQabzDsNFKf3yjBWpb9rOxJ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<span class="text-6xl font-extrabold text-primary text-glow block mb-4">340%</span>
+<p class="text-on-surface-variant text-sm tracking-widest uppercase font-bold mb-4">ROAS for GammaPlus</p>
+<blockquote class="text-white italic mb-6">"Their automation cut our operational overhead by half in 30 days."</blockquote>
+<a class="text-primary flex items-center gap-2 font-bold" href="#">Case Detail <span class="material-symbols-outlined" data-icon="north_east">north_east</span></a>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="SaaS analytics dashboard with vibrant data visualizations and sleek dark mode user interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhSk6M-ihUjooxT5yZ1G-l6dGb4t8Ljy8PLbe0f2qZrKw5V1B64NhKAkhPMhTgzKouOjw4QrvvL2opADuEWVTriBp6BLTp9o2tlJDYIyaUtOCeKRcqB6k0NhExxqP71FiXT8VaZKMJ_D7q-yxfILPT6qhscEF3HIvhekY1BWIplmuHheo56StpIyxV8Q_6B6QPU7z79EAVjC_5wRN2CH-hbwZMoZUa6fO6c1pxhHLj1aMfF-9SUJeT6y2DfU3cNbJBwXx8oaNBYG4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<span class="text-6xl font-extrabold text-primary text-glow block mb-4">3.8x</span>
+<p class="text-on-surface-variant text-sm tracking-widest uppercase font-bold mb-4">Conversion Growth</p>
+<blockquote class="text-white italic mb-6">"A technical marketing team that actually understands our code."</blockquote>
+<a class="text-primary flex items-center gap-2 font-bold" href="#">Case Detail <span class="material-symbols-outlined" data-icon="north_east">north_east</span></a>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern collaborative tech workspace with developers and designers working on large monitors with glowing code" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWaVU6pDroI2uH-EmYIdvR25H00u3D9oGTHKxlk5y1m2Sd7gz45kzTw55iff0I7iQ6ktcq_iqzVrK4Jd30CZ-Otfeo2aGYY0mNiimpNSl3GytkeiTXg-z8x_XMUNJiESQAVluM3PwZ2XXcy_3Yh-LsusktRIE1xW1wWV2kf3PniDuIOv5e9edSvoj6nS9BPp87MM9FtDvsVWFeNLmSgGW-ueeLK-7yDf1IVW7LuTEDqVvFMmPYEz_07pJQdFuk6nSMnX8xJd5qC7w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
+<div class="absolute bottom-0 p-8 w-full">
+<span class="text-6xl font-extrabold text-primary text-glow block mb-4">20+</span>
+<p class="text-on-surface-variant text-sm tracking-widest uppercase font-bold mb-4">Hours Saved/Week</p>
+<blockquote class="text-white italic mb-6">"The best decision for our engineering-led sales process."</blockquote>
+<a class="text-primary flex items-center gap-2 font-bold" href="#">Case Detail <span class="material-symbols-outlined" data-icon="north_east">north_east</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Masonry -->
+<section class="py-24 px-12 max-w-[1440px] mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-5xl md:text-6xl font-bold tracking-tighter">Loved by founders.</h2>
+</div>
+<div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+<!-- Testimonial 1 -->
+<div class="break-inside-avoid bg-surface-container p-8 rounded-xl border border-outline-variant/10">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-6 leading-relaxed italic">"Great Hornbills didn't just build a site; they built a conversion machine. Our cost per lead dropped by 45% within three weeks of launch."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-bold text-white text-sm">Alex Rivera</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Founder, GammaPlus</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="break-inside-avoid bg-surface-container p-8 rounded-xl border border-outline-variant/10">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface mb-6 leading-relaxed italic">"Technical marketing at its best. They understood our API structure before we even explained it. The automation flows they built with n8n are flawless."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest"></div>
+<div>
+<p class="font-bold text-white text-sm">Sarah Chen</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">CTO, Graame</p>
+</div>
+</div>
+</div>
+<!-- Add more testimonials as needed -->
+</div>
+</section>
+<!-- Tech Stack Marquee -->
+<section class="py-16 bg-surface-container-low/50">
+<div class="max-w-[1440px] mx-auto px-12">
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-8 opacity-50 grayscale hover:grayscale-0 transition-all">
+<span class="text-xl font-bold tracking-tighter">n8n</span>
+<span class="text-xl font-bold tracking-tighter">Make.com</span>
+<span class="text-xl font-bold tracking-tighter">HubSpot</span>
+<span class="text-xl font-bold tracking-tighter">Webflow</span>
+<span class="text-xl font-bold tracking-tighter">Shopify</span>
+<span class="text-xl font-bold tracking-tighter">Meta Ads</span>
+<span class="text-xl font-bold tracking-tighter">Google Ads</span>
+<span class="text-xl font-bold tracking-tighter">OpenAI</span>
+<span class="text-xl font-bold tracking-tighter">Python</span>
+</div>
+</div>
+</section>
+<!-- Lead Magnet -->
+<section class="py-24 px-12 max-w-[1440px] mx-auto">
+<div class="bg-surface-container rounded-3xl p-12 lg:p-20 flex flex-col lg:flex-row items-center gap-16 border border-outline-variant/10">
+<div class="flex-1">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-6">Get the 47-Point Website Conversion Audit — <span class="text-primary italic">Free</span></h2>
+<p class="text-on-surface-variant text-lg mb-10 max-w-lg leading-relaxed">Stop guessing why your traffic isn't buying. We reveal the exact bottlenecks killing your ROI.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-md">
+<input class="bg-surface-container-highest border-none rounded-lg px-6 py-4 focus:ring-2 focus:ring-primary/40 flex-1 text-white" placeholder="Work email address" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform active:scale-95">Send My Audit</button>
+</form>
+<p class="mt-4 text-[10px] uppercase text-on-surface-variant tracking-widest">Join 4,000+ marketers on the weekly growth list</p>
+</div>
+<div class="flex-1 relative">
+<div class="absolute inset-0 bg-primary/20 blur-[100px]"></div>
+<img class="relative z-10 w-full max-w-sm mx-auto drop-shadow-2xl rounded-lg" data-alt="High-quality 3D render of a premium marketing audit PDF guide floating in dark space with glowing digital accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzxoGDHVjSvAOw1W3E-XpJiWMPRUV4W8ghFo8tmBit_TQWsIxHVY40mF5GuGlbDAx_vjZ0frD_1-y1TlHvRFac4UKTsPmE-Nsa-WFrg_WF7Nig632Ogvu2RWFkYWZMhqgZ4LuWlI_TGyS4pZ83QVrWNyw5TTNT0T5KD1wvEzyLVIqmn7d9I_Yt2_4BxVhtJ0l15aCuzWJ5Fkf_hADf8IhQcmzr4vcTGPDHFiJesMdXxX3D4pJMA-OStFdGt6P4oipM5G0-UKihwVw"/>
+</div>
+</div>
+</section>
+<!-- Founders Section -->
+<section class="py-24 px-12 max-w-[1440px] mx-auto text-center">
+<h2 class="text-5xl md:text-6xl font-bold tracking-tighter mb-20">The Founders</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="flex flex-col items-center">
+<div class="w-40 h-40 rounded-full bg-surface-container-highest mb-8 border-4 border-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of a modern creative tech founder with a focused expression against a dark professional background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp7MRtt2j48YXR4LeoQTgCu1YG0HX4b_u2e6_3oapiwcQOOUEJ8GLG3bKZR57QYQgLm-HUiIvJ7RrYX6LoMX_dzkNlGGe3CsS-3PgEzD_LXGnJCsyPA2l89t_W_3c_nvW1LTfPFfGsMy8C-EM3i64WcuL8kzKnylTLW94Tl0T8HwPKyZQ8Eowox-JQ9n_8NKUt9FhzermDME3rOw5qmB0kdiUyAcqI0i7Q1zFAPPTGrNKb_o8cmWS8wpEIGMwvkynOJGxQsfQysaY"/>
+</div>
+<h5 class="text-xl font-bold">Erik Vorn</h5>
+<p class="text-primary text-[10px] uppercase font-bold tracking-widest mb-2">Strategy &amp; Growth</p>
+<p class="text-on-surface-variant text-sm px-6">Ex-VP of Growth for Series C startups.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-40 h-40 rounded-full bg-surface-container-highest mb-8 border-4 border-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a technical co-founder looking professional and innovative with soft rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5tHwLm3QVLXZUsR26nPenQWmazt95_sZ_tWvzPejHp0o_MqqLB2_Le9G1MyPjq7C_86bu1BhyXmA49iZZEWeojgGoYGs5KzkGQBvjqJcTMfAoYExO8xSNikF7S8YZGZ8QzUK3aahNzX_ZS55__TiBdz5QCU9eGRfBUB677-ShFcCGRmVJX2FQUvZDHcRxCuTk2SP2MJGHVppokghV5UlZwa_STj2AdTjE6wS6E3EOtPT7cHCOl1KSBggPdQyOdwce9kaZrQ0WuY4"/>
+</div>
+<h5 class="text-xl font-bold">Marc Thorne</h5>
+<p class="text-primary text-[10px] uppercase font-bold tracking-widest mb-2">Tech &amp; Automation</p>
+<p class="text-on-surface-variant text-sm px-6">Full-stack engineer &amp; AI consultant.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-40 h-40 rounded-full bg-surface-container-highest mb-8 border-4 border-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a female leader in digital marketing with a confident and approachable look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6DTHJ3ewLGVIzkYI7s5uMtsONmptcQ55dc2QCRfxMkDvDP2ra3-hvN_-uouAuKbue7wn4Vy7N-FYjfI9Hil8mi5i6c5SGRyIEYfeAdB5VTKmkzUdFi3heTZplkidSYScv93z_ZE7nufX3qZ0uFULFG_KuWAMnXdcONIoBIMCwNu7pWx8G2hu8fUrYxnadV96miYQiyCfKIdwaMTn46O43NOW3yCeXek48aqh1Dz-F4OnEp10pqm5FhbQ1ae98DnTFqgpJbwc7JG8"/>
+</div>
+<h5 class="text-xl font-bold">Lena S.</h5>
+<p class="text-primary text-[10px] uppercase font-bold tracking-widest mb-2">Creative Direction</p>
+<p class="text-on-surface-variant text-sm px-6">Award-winning UX/UI designer.</p>
+</div>
+</div>
+</section>
+<!-- FAQ Accordion -->
+<section class="py-24 px-12 max-w-4xl mx-auto">
+<h2 class="text-4xl font-bold tracking-tighter mb-16 text-center">Frequently Asked</h2>
+<div class="space-y-4">
+<div class="faq-item bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<button class="faq-toggle w-full flex justify-between items-center text-left" onclick="toggleFaq(this)">
+<span class="text-lg font-bold">How much does a growth audit cost?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">add</span>
+</button>
+<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<p class="text-on-surface-variant text-sm leading-relaxed pt-4">Our initial growth audit is completely free. We analyze your current setup, identify conversion leakages, and present a data-backed roadmap. No strings attached. Paid engagements start after you see the value.</p>
+</div>
+</div>
+<div class="faq-item bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<button class="faq-toggle w-full flex justify-between items-center text-left" onclick="toggleFaq(this)">
+<span class="text-lg font-bold">What is your typical campaign timeline?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">add</span>
+</button>
+<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<p class="text-on-surface-variant text-sm leading-relaxed pt-4">Websites launch in 5-7 business days. Ad campaigns go live within 48 hours of strategy approval. Automation workflows are deployed in 1-2 weeks depending on complexity. We move fast because speed compounds.</p>
+</div>
+</div>
+<div class="faq-item bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<button class="faq-toggle w-full flex justify-between items-center text-left" onclick="toggleFaq(this)">
+<span class="text-lg font-bold">Do you work on a performance basis?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">add</span>
+</button>
+<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<p class="text-on-surface-variant text-sm leading-relaxed pt-4">Yes, for qualified clients. We offer hybrid models with a base retainer plus performance bonuses tied to ROAS targets. We eat our own cooking — if we don't deliver results, we don't get paid the bonus.</p>
+</div>
+</div>
+<div class="faq-item bg-surface-container p-6 rounded-xl border border-outline-variant/10">
+<button class="faq-toggle w-full flex justify-between items-center text-left" onclick="toggleFaq(this)">
+<span class="text-lg font-bold">Will I need to change my current tech stack?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">add</span>
+</button>
+<div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+<p class="text-on-surface-variant text-sm leading-relaxed pt-4">No. We integrate with your existing tools — Shopify, WordPress, HubSpot, Salesforce, whatever you're running. Our automations layer on top of your stack, not replace it.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-12 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 -z-10"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-primary/20 blur-[180px] rounded-full"></div>
+<div class="max-w-[1440px] mx-auto relative z-10">
+<h2 class="text-6xl md:text-8xl font-extrabold tracking-[-0.04em] leading-[0.95] mb-12">Stop paying for cool.<br/><span class="text-primary italic">Start paying for results.</span></h2>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="bg-primary text-on-primary px-12 py-6 rounded-lg font-extrabold text-xl shadow-[0_0_30px_rgba(197,255,61,0.5)] hover:scale-105 active:scale-95 transition-all">Book Your Strategy Call</button>
+<button class="px-12 py-6 rounded-lg font-bold text-xl border border-outline-variant/30 hover:bg-surface-variant transition-colors">See the Roadmap</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#131319] rounded-t-[32px] mt-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 px-12 py-24 max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-3xl font-bold tracking-tighter text-white mb-8">Great Hornbills</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">A Technical Luxury Marketing Agency. We engineer growth through code, data, and psychology.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined text-sm" data-icon="public">public</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined text-sm" data-icon="groups">groups</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined text-sm" data-icon="alternate_email">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h6 class="text-white font-bold uppercase tracking-widest text-[10px] mb-8">Services</h6>
+<ul class="space-y-4">
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">Conversion Rate Optimization</a></li>
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">Performance Marketing</a></li>
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">AI Workflow Automation</a></li>
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">Custom CRM Solutions</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-bold uppercase tracking-widest text-[10px] mb-8">Agency</h6>
+<ul class="space-y-4">
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">Case Studies</a></li>
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">The Founder's Blog</a></li>
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">Our Tech Stack</a></li>
+<li><a class="text-[#a0a0a8] hover:text-[#c4fe3c] transition-colors text-sm" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-white font-bold uppercase tracking-widest text-[10px] mb-8">Stay Ahead</h6>
+<p class="text-on-surface-variant text-sm mb-6">Join our newsletter for weekly technical growth audits.</p>
+<form class="flex gap-2">
+<input class="bg-surface-container border-none rounded-lg px-4 py-2 w-full text-white text-sm focus:ring-1 focus:ring-primary" placeholder="Email" type="text"/>
+<button class="bg-primary text-on-primary p-2 rounded-lg transition-transform hover:scale-105"><span class="material-symbols-outlined" data-icon="send">send</span></button>
+</form>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-outline-variant/10 text-center text-on-surface-variant text-[10px] uppercase tracking-widest">
+            © 2024 Great Hornbills. Technical Luxury Marketing. Engineered for Results.
+        </div>
+</footer>
+<script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const icon = btn.querySelector('.material-symbols-outlined');
+  const isOpen = answer.classList.contains('open');
+
+  document.querySelectorAll('.faq-answer.open').forEach(a => {
+    a.classList.remove('open');
+    a.previousElementSibling.querySelector('.material-symbols-outlined').textContent = 'add';
+    a.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = '';
+  });
+
+  if (!isOpen) {
+    answer.classList.add('open');
+    icon.textContent = 'remove';
+    icon.style.transform = 'rotate(180deg)';
+  }
+}
+
+// Mobile menu toggle
+const nav = document.querySelector('nav .hidden.md\\:flex');
+const mobileBtn = document.createElement('button');
+mobileBtn.className = 'md:hidden text-white';
+mobileBtn.innerHTML = '<span class="material-symbols-outlined text-2xl">menu</span>';
+mobileBtn.onclick = function() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+};
+document.querySelector('nav .flex.gap-4').before(mobileBtn);
+
+const mobileMenu = document.createElement('div');
+mobileMenu.id = 'mobile-menu';
+mobileMenu.className = 'hidden md:hidden fixed inset-0 top-[72px] bg-[#0e0e13]/95 backdrop-blur-xl z-40 flex flex-col items-center pt-12 gap-6';
+mobileMenu.innerHTML = `
+  <a class="text-[#c4fe3c] font-bold text-lg" href="#">Services</a>
+  <a class="text-[#a0a0a8] hover:text-white text-lg" href="#">Work</a>
+  <a class="text-[#a0a0a8] hover:text-white text-lg" href="#">About</a>
+  <a class="text-[#a0a0a8] hover:text-white text-lg" href="#">Resources</a>
+  <a class="text-[#a0a0a8] hover:text-white text-lg" href="#">Blog</a>
+  <button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold mt-4">Get Free Audit</button>
+`;
+document.querySelector('nav').appendChild(mobileMenu);
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(30px)';
+  section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(section);
+});
+</script>
+</body></html>
