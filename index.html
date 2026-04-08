@@ -4391,24 +4391,46 @@
 
   <!-- Fix broken sections + scroll animations -->
   <style>
-    /* Fix feature-1: hide ALL broken elements in phone mockup */
-    .feature-1_video-container { display: none !important; }
-    .feature-1_video-image { display: none !important; }
+    /* Fix feature-1: CSS phone mockup with dashboard screenshot */
     .feature-1_video-image-bg { display: none !important; }
-    .feature-1_graphic-container {
+    .feature-1_phone-frame { display: none !important; }
+    .feature-1_video-item video { display: none !important; }
+    .feature-1_video-container {
       display: flex !important;
-      align-items: center !important;
       justify-content: center !important;
-      min-height: 200px;
+      align-items: center !important;
     }
-    .feature-1_graphic-container::after {
+    .feature-1_video-frame {
+      position: relative !important;
+      width: 280px !important;
+      height: 560px !important;
+      background: #1a1a2e !important;
+      border-radius: 2.5rem !important;
+      padding: 12px !important;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.4), inset 0 0 0 2px rgba(255,255,255,0.1) !important;
+    }
+    .feature-1_video-item {
+      width: 100% !important;
+      height: 100% !important;
+      border-radius: 2rem !important;
+      overflow: hidden !important;
+      background: url('/assets/work/screen-dashboard.png') center top/cover no-repeat !important;
+    }
+    .feature-1_video-frame::before {
       content: '';
-      display: block;
-      width: 100%;
-      max-width: 500px;
-      height: 300px;
-      background: url('/assets/work/screen-dashboard.png') center/contain no-repeat;
-      border-radius: 1rem;
+      position: absolute;
+      top: 12px; left: 50%;
+      transform: translateX(-50%);
+      width: 80px; height: 24px;
+      background: #1a1a2e;
+      border-radius: 0 0 1rem 1rem;
+      z-index: 2;
+    }
+    @media (max-width: 768px) {
+      .feature-1_video-frame {
+        width: 220px !important;
+        height: 440px !important;
+      }
     }
 
     /* Fix CTA section: hide broken cta-3d.png completely */
