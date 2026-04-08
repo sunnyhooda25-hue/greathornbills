@@ -4413,20 +4413,20 @@
     (function() {
       if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
-      // Feature-1 aside cards: parallax scroll (left goes up, right goes down)
+      // Feature-1 aside cards: parallax (left drifts up, right drifts down)
       var asideLeft = document.querySelector('.feature-1_aside-left');
       var asideRight = document.querySelector('.feature-1_aside-right');
       var asideSection = document.querySelector('.section_home-feature-1');
       if (asideLeft && asideSection) {
-        gsap.fromTo(asideLeft, { y: 100, opacity: 0 }, {
-          y: -80, opacity: 1, ease: 'none',
-          scrollTrigger: { trigger: asideSection, start: 'top 60%', end: 'bottom 20%', scrub: 0.5 }
+        gsap.fromTo(asideLeft, { yPercent: 15 }, {
+          yPercent: -15, ease: 'none',
+          scrollTrigger: { trigger: asideSection, start: 'top bottom', end: 'bottom top', scrub: true }
         });
       }
       if (asideRight && asideSection) {
-        gsap.fromTo(asideRight, { y: -60, opacity: 0 }, {
-          y: 80, opacity: 1, ease: 'none',
-          scrollTrigger: { trigger: asideSection, start: 'top 60%', end: 'bottom 20%', scrub: 0.5 }
+        gsap.fromTo(asideRight, { yPercent: -15 }, {
+          yPercent: 15, ease: 'none',
+          scrollTrigger: { trigger: asideSection, start: 'top bottom', end: 'bottom top', scrub: true }
         });
       }
 
