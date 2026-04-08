@@ -2761,10 +2761,10 @@
                   <span class="url">greathornbills.com</span>
                 </div>
                 <div class="gh-laptop-screen">
-                  <img src="/assets/work/screen-dashboard.png" alt="Campaign Performance Dashboard" class="gh-slide-a" />
-                  <img src="/assets/work/screen-builder.png" alt="Landing Page Builder" class="gh-slide-b" />
+                  <img src="/assets/work/screen-dashboard.png" alt="Campaign Performance Dashboard" class="gh-slide-a" loading="lazy" />
+                  <img src="/assets/work/screen-builder.png" alt="Landing Page Builder" class="gh-slide-b" loading="lazy" />
                 </div>
-                <img src="/assets/work/macbook-frame.png" alt="" class="gh-laptop-frame" />
+                <img src="/assets/work/macbook-frame.png" alt="" class="gh-laptop-frame" loading="lazy" />
               </div>
               <div class="gh-laptop-base1"></div>
               <div class="gh-laptop-base2"></div>
@@ -2774,8 +2774,8 @@
               <div class="gh-phone-bezel">
                 <div class="gh-phone-screen">
                   <div class="gh-phone-notch"></div>
-                  <img src="/assets/work/screen-dashboard.png" alt="Dashboard on mobile" class="gh-slide-a" />
-                  <img src="/assets/work/screen-builder.png" alt="Builder on mobile" class="gh-slide-b" />
+                  <img src="/assets/work/screen-dashboard.png" alt="Dashboard on mobile" class="gh-slide-a" loading="lazy" />
+                  <img src="/assets/work/screen-builder.png" alt="Builder on mobile" class="gh-slide-b" loading="lazy" />
                 </div>
               </div>
               <div class="gh-phone-home"></div>
@@ -2928,7 +2928,7 @@
                             Sorry, your browser doesn't support embedded videos.
                           </video>
                         </div>
-                        <img class="feature-1_phone-frame" src="/assets/work/phone-frame.png" alt="" />
+                        <img class="feature-1_phone-frame" src="/assets/work/phone-frame.png" alt="" loading="lazy" />
                       </div>
                     </div>
                     <!-- 3D ribbon background -->
@@ -3279,7 +3279,7 @@
                       </div>
                       <p class="gh-testi-quote">"Great Hornbills scaled our paid campaigns across Google and Meta while keeping our CPA profitable. They don't just manage ads — they understand the full funnel from click to close."</p>
                       <div class="gh-testi-author">
-                        <img src="/assets/logos/gammastack.png" alt="GammaStack" class="gh-testi-logo"/>
+                        <img src="/assets/logos/gammastack.png" alt="GammaStack" class="gh-testi-logo" loading="lazy"/>
                         <div>
                           <div class="gh-testi-name">GammaStack</div>
                           <div class="gh-testi-role">iGaming & Sports Tech</div>
@@ -3297,7 +3297,7 @@
                       </div>
                       <p class="gh-testi-quote">"They restructured our entire campaign architecture and cut our CPL in half within 60 days. The team thinks like growth operators, not just media buyers."</p>
                       <div class="gh-testi-author">
-                        <img src="/assets/logos/gammasweep.svg" alt="GammaSweep" class="gh-testi-logo"/>
+                        <img src="/assets/logos/gammasweep.svg" alt="GammaSweep" class="gh-testi-logo" loading="lazy"/>
                         <div>
                           <div class="gh-testi-name">GammaSweep</div>
                           <div class="gh-testi-role">Sweepstakes Platform</div>
@@ -3315,7 +3315,7 @@
                       </div>
                       <p class="gh-testi-quote">"We were burning budget on underperforming campaigns. Great Hornbills rebuilt our strategy from scratch — new creatives, new audiences, new funnel — and delivered 5.2x ROAS within the first quarter."</p>
                       <div class="gh-testi-author">
-                        <img src="/assets/logos/gammaplus.png" alt="GammaPlus" class="gh-testi-logo"/>
+                        <img src="/assets/logos/gammaplus.png" alt="GammaPlus" class="gh-testi-logo" loading="lazy"/>
                         <div>
                           <div class="gh-testi-name">GammaPlus</div>
                           <div class="gh-testi-role">Gaming & Entertainment</div>
@@ -3333,7 +3333,7 @@
                       </div>
                       <p class="gh-testi-quote">"They delivered a fully conversion-optimized website in under a week. Not a template — a custom build that reflects our brand and actually generates leads from day one."</p>
                       <div class="gh-testi-author">
-                        <img src="/assets/logos/graame.png" alt="Graame" class="gh-testi-logo"/>
+                        <img src="/assets/logos/graame.png" alt="Graame" class="gh-testi-logo" loading="lazy"/>
                         <div>
                           <div class="gh-testi-name">Graame</div>
                           <div class="gh-testi-role">E-Commerce</div>
@@ -3351,7 +3351,7 @@
                       </div>
                       <p class="gh-testi-quote">"Our old site looked fine but never converted. Great Hornbills rebuilt it with a marketer's eye — clear CTAs, trust signals, speed optimization. Conversions jumped 3.8x in the first month."</p>
                       <div class="gh-testi-author">
-                        <img src="/assets/logos/gogoonj.png" alt="Gogoonj" class="gh-testi-logo"/>
+                        <img src="/assets/logos/gogoonj.png" alt="Gogoonj" class="gh-testi-logo" loading="lazy"/>
                         <div>
                           <div class="gh-testi-name">Gogoonj</div>
                           <div class="gh-testi-role">Media & Entertainment</div>
@@ -4323,6 +4323,283 @@
         text-align: center !important;
       }
     }
+
+/* ═══════════════════════════════════════════════════ */
+/* MOBILE-FIRST REDESIGN — Paid Campaign Optimized    */
+/* ═══════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* ── Sticky CTA Bar ── */
+  .gh-sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    background: rgba(15, 15, 20, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  }
+  .gh-sticky-btn {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .gh-sticky-btn:active { transform: scale(0.96); }
+  .gh-sticky-touch {
+    background: #fff;
+    color: #0f0f14;
+  }
+  .gh-sticky-call {
+    background: linear-gradient(135deg, #4541fe, #6366f1);
+    color: #fff;
+  }
+  /* Hide sticky bar when contact modal is open */
+  body.gh-modal-open .gh-sticky-cta { display: none !important; }
+
+  /* ── Hide sticky bar on desktop ── */
+  /* (this rule is inside 768px media query, so it only shows on mobile) */
+
+  /* ── Hero Section ── */
+  .section_home-hero {
+    height: auto !important;
+    min-height: 100dvh !important;
+    padding-bottom: 80px !important;
+  }
+  .hero_container {
+    padding: 4rem 1.25rem 2rem !important;
+    gap: 1.5rem !important;
+  }
+  .hero_heading-text,
+  .hero_container .heading-style-h1 {
+    font-size: clamp(2rem, 7vw, 3rem) !important;
+    line-height: 1.05 !important;
+  }
+  /* Hide inline hero CTAs on mobile (sticky bar handles them) */
+  .gh-hero-ctas { display: none !important; }
+
+  /* ── Benefits Section (blue card) ── */
+  .section_home-benefits {
+    height: auto !important;
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+  .benefits_layout {
+    height: auto !important;
+    min-height: 70vh !important;
+    position: relative !important;
+    border-radius: 0 !important;
+    padding: 3rem 1.5rem !important;
+    transform: none !important;
+  }
+  .benefits_top {
+    padding-top: 2rem !important;
+    gap: 1.25rem !important;
+  }
+  .benefits_top .heading-style-h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+  }
+  .benefits_text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    padding: 0 0.5rem !important;
+  }
+
+  /* ── Vision Section ── */
+  .section_home-vision {
+    padding-bottom: 2rem !important;
+  }
+  .imagine_layout h2,
+  .imagine_layout .heading-style-h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+  .vision_bottom-column {
+    padding: 1.5rem !important;
+    border: 1px solid rgba(0,0,0,0.06) !important;
+    border-radius: 1rem !important;
+    background: #fff !important;
+  }
+
+  /* ── Process Section ── */
+  .section_home-process .heading-style-h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+    padding: 0 1rem !important;
+  }
+
+  /* ── People Section ── */
+  .section_home-people {
+    padding-bottom: 0 !important;
+  }
+  .people_item {
+    padding: 2rem 1.25rem !important;
+  }
+  .people_item-header {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  .people_item-subheader {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+  .people_background-container {
+    height: 50vw !important;
+    min-height: 200px !important;
+  }
+
+  /* ── Feature-1 (Automation) ── */
+  .section_home-feature-1 {
+    padding-bottom: 2rem !important;
+  }
+  .feature-1_top h2,
+  .feature-1_top .heading-style-h1 {
+    font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+    padding: 0 1rem !important;
+  }
+  .feature-1_text {
+    font-size: 0.9rem !important;
+    padding: 0 1rem !important;
+    line-height: 1.6 !important;
+  }
+  .feature-1_graphic-container {
+    margin: 1rem auto !important;
+    max-width: 65vw !important;
+  }
+  .feature-1_aside {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 0 1rem 2rem !important;
+  }
+  .feature-1_aside-left,
+  .feature-1_aside-right {
+    padding: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    transform: none !important;
+  }
+
+  /* ── Feature-2 (Campaigns) ── */
+  .section_home-feature-2 {
+    padding-bottom: 2rem !important;
+  }
+  .feature-2_top h2 {
+    font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+  }
+  .gh-f2-proofs {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .gh-f2-proof-card {
+    width: 100% !important;
+    padding: 1.25rem !important;
+  }
+
+  /* ── Reviews Section ── */
+  .section_home-reviews {
+    padding: 3rem 0 !important;
+  }
+  .reviews_layout {
+    transform: none !important;
+    padding: 0 1rem !important;
+  }
+  .reviews_card {
+    padding: 1.25rem !important;
+  }
+
+  /* ── CTA Section ── */
+  .section_home-cta {
+    padding: 2rem 0 !important;
+  }
+  .cta_layout {
+    flex-direction: column !important;
+    border-radius: 1.5rem !important;
+  }
+  .cta_left {
+    padding: 2rem 1.5rem !important;
+  }
+  .cta_left h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+  .cta_right {
+    display: none !important;
+  }
+  header.button.primary.is-black {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* ── Footer ── */
+  .footer_component {
+    padding-bottom: 80px !important;
+  }
+
+  /* ── Contact Modal ── */
+  .gh-contact-modal .gh-contact-inner {
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+  }
+  .gh-contact-left {
+    padding: 1.5rem !important;
+    min-height: auto !important;
+  }
+  .gh-contact-right {
+    padding: 1.5rem !important;
+    flex: 1 !important;
+    overflow-y: auto !important;
+  }
+
+  /* ── Global Mobile Typography ── */
+  body {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+  }
+
+  /* ── Touch Targets ── */
+  a, button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* ── Prevent horizontal overflow ── */
+  body, html {
+    overflow-x: hidden !important;
+  }
+  .padding-global {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* ── Performance: content-visibility for below-fold sections ── */
+  .section_home-feature-1,
+  .section_home-feature-2,
+  .section_home-reviews,
+  .section_home-testimonials,
+  .section_home-cta {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+}
+
+/* Hide sticky CTA on desktop */
+@media (min-width: 769px) {
+  .gh-sticky-cta { display: none !important; }
+}
   </style>
 
   <script>
@@ -4337,6 +4614,7 @@
         btn.addEventListener('click', function(e){
           e.preventDefault();
           modal.classList.add('is-open');
+          document.body.classList.add('gh-modal-open');
           document.body.style.overflow = 'hidden';
         });
       });
@@ -4344,6 +4622,7 @@
       // Close
       function closeModal(){
         modal.classList.remove('is-open');
+        document.body.classList.remove('gh-modal-open');
         document.body.style.overflow = '';
       }
       modal.querySelector('.gh-contact-close').addEventListener('click', closeModal);
@@ -4380,6 +4659,22 @@
         }, 4000);
       });
     })();
+  </script>
+
+  <!-- Mobile Sticky CTA Bar -->
+  <div class="gh-sticky-cta">
+    <button class="gh-sticky-btn gh-sticky-touch gh-open-contact">Get in Touch</button>
+    <a href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" class="gh-sticky-btn gh-sticky-call">Book a Call</a>
+  </div>
+
+  <script>
+    // Sticky CTA: open contact form
+    document.querySelectorAll('.gh-sticky-cta .gh-open-contact').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var modal = document.querySelector('.gh-contact-modal');
+        if (modal) { modal.classList.add('is-open'); document.body.classList.add('gh-modal-open'); document.body.style.overflow = 'hidden'; }
+      });
+    });
   </script>
 
   <!-- Benefits card scroll-scale animation + fallback -->
