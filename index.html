@@ -4409,6 +4409,106 @@
       });
     })();
 
+    // Scroll-triggered fade-in animations for all major sections
+    (function() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+      // Feature-1 aside cards: slide up + fade in
+      gsap.utils.toArray('.feature-1_aside-left, .feature-1_aside-right').forEach(function(el, i) {
+        gsap.from(el, {
+          y: 80,
+          opacity: 0,
+          duration: 1,
+          delay: i * 0.2,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+        });
+      });
+
+      // Feature-1 phone/graphic container
+      var graphic = document.querySelector('.feature-1_graphic-container');
+      if (graphic) {
+        gsap.from(graphic, {
+          y: 60,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: graphic, start: 'top 85%', once: true }
+        });
+      }
+
+      // Feature-2 stat cards
+      gsap.utils.toArray('.feature-2_headline, .feature-2_text, .feature-2_metric').forEach(function(el) {
+        gsap.from(el, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+        });
+      });
+
+      // People section
+      gsap.utils.toArray('.people_item-header, .people_item-subheader, .people_background-container').forEach(function(el) {
+        gsap.from(el, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+        });
+      });
+
+      // Review/testimonial cards
+      gsap.utils.toArray('.swiper-slide.is-review').forEach(function(el, i) {
+        gsap.from(el, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          delay: i * 0.1,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+        });
+      });
+
+      // Vision section columns
+      gsap.utils.toArray('.vision_bottom-column').forEach(function(el, i) {
+        gsap.from(el, {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          delay: i * 0.15,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+        });
+      });
+
+      // CTA section
+      var ctaLeft = document.querySelector('.cta_left');
+      var ctaRight = document.querySelector('.cta_right');
+      if (ctaLeft) {
+        gsap.from(ctaLeft, {
+          x: -60, opacity: 0, duration: 1, ease: 'expo.out',
+          scrollTrigger: { trigger: ctaLeft, start: 'top 85%', once: true }
+        });
+      }
+      if (ctaRight) {
+        gsap.from(ctaRight, {
+          x: 60, opacity: 0, duration: 1, delay: 0.2, ease: 'expo.out',
+          scrollTrigger: { trigger: ctaRight, start: 'top 85%', once: true }
+        });
+      }
+
+      // Work showcase section
+      var workDevices = document.querySelector('.gh-work-devices');
+      if (workDevices) {
+        gsap.from(workDevices, {
+          y: 80, opacity: 0, duration: 1.2, ease: 'expo.out',
+          scrollTrigger: { trigger: workDevices, start: 'top 85%', once: true }
+        });
+      }
+    })();
+
     // Fallback: if GSAP animations fail, show hidden content after 3s
     setTimeout(function() {
       document.querySelectorAll('[data-w-id]').forEach(function(el) {
