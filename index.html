@@ -231,6 +231,13 @@
     <link href="/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
     <link href="/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
     <link href="/assets/logos/gh-logo.png" rel="apple-touch-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
     <script
       async=""
       src="https://www.googletagmanager.com/gtag/js?id=G-LSBCEPSM80"
@@ -4369,26 +4376,106 @@
   /* Hide sticky bar when contact modal is open */
   body.gh-modal-open .gh-sticky-cta { display: none !important; }
 
+  /* ── App-Like Bottom Nav ── */
+  .app-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    background: rgba(14, 14, 19, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .app-nav-btn {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    color: #f9f5fd;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 0.75rem;
+    padding: 0.875rem 1rem;
+    border: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .app-nav-btn:active {
+    transform: scale(0.96);
+  }
+  .app-nav-btn.active {
+    background: linear-gradient(135deg, #4541fe, #6366f1);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(69, 65, 254, 0.3);
+  }
+  .app-nav-btn.active .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
+  }
+  body.gh-modal-open .app-bottom-nav { display: none !important; }
+
   /* ── Hide sticky bar on desktop ── */
   /* (this rule is inside 768px media query, so it only shows on mobile) */
 
   /* ── Hero Section ── */
   .section_home-hero {
+    position: relative !important;
+    overflow: hidden !important;
     height: auto !important;
-    min-height: 100dvh !important;
-    padding-bottom: 80px !important;
+    min-height: 100svh !important;
+    padding-bottom: 6rem !important;
   }
   .hero_container {
-    padding: 4rem 1.25rem 2rem !important;
+    position: relative !important;
+    z-index: 2 !important;
+    padding: 6rem 1.25rem 2rem !important;
     gap: 1.5rem !important;
+  }
+  .hero_video {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    z-index: 0 !important;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero_video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
   }
   .hero_heading-text,
   .hero_container .heading-style-h1 {
     font-size: clamp(2rem, 7vw, 3rem) !important;
     line-height: 1.05 !important;
   }
-  /* Hide inline hero CTAs on mobile (sticky bar handles them) */
-  .gh-hero-ctas { display: none !important; }
+  /* Show hero CTAs on mobile too — don't rely only on sticky bar */
+  .gh-hero-ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+  .gh-hero-ctas .button {
+    text-align: center !important;
+  }
 
   /* ── Benefits Section (blue card) ── */
   .section_home-benefits {
@@ -4419,7 +4506,11 @@
 
   /* ── Vision Section ── */
   .section_home-vision {
-    padding-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .imagine-padding {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
   }
   .imagine_layout h2,
   .imagine_layout .heading-style-h1 {
@@ -4475,6 +4566,14 @@
   .feature-1_graphic-container {
     margin: 1rem auto !important;
     max-width: 65vw !important;
+    padding-top: 2rem !important;
+  }
+  .padding-feature-1 {
+    padding-bottom: 2rem !important;
+  }
+  .process_layout {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
   }
   .feature-1_aside {
     flex-direction: column !important;
@@ -4528,6 +4627,9 @@
   }
   .cta_left {
     padding: 2rem 1.5rem !important;
+  }
+  .cta_layout {
+    padding-top: 3rem !important;
   }
   .cta_left h2 {
     font-size: clamp(1.5rem, 6vw, 2rem) !important;
@@ -4661,15 +4763,26 @@
     })();
   </script>
 
-  <!-- Mobile Sticky CTA Bar -->
-  <div class="gh-sticky-cta">
-    <button class="gh-sticky-btn gh-sticky-touch gh-open-contact">Get in Touch</button>
-    <a href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" class="gh-sticky-btn gh-sticky-call">Book a Call</a>
-  </div>
+  <!-- Mobile App-Like Bottom Nav -->
+  <nav class="app-bottom-nav md-hide">
+    <button class="app-nav-btn gh-open-contact" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.05);">
+      <span class="material-symbols-outlined" style="font-size: 1.125rem;">mail</span>
+      <span>Get in Touch</span>
+    </button>
+    <a href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" class="app-nav-btn active">
+      <span class="material-symbols-outlined" style="font-size: 1.125rem;">calendar_month</span>
+      <span>Book a Call</span>
+    </a>
+  </nav>
+  <style>
+    @media (min-width: 769px) {
+      .app-bottom-nav.md-hide { display: none !important; }
+    }
+  </style>
 
   <script>
     // Sticky CTA: open contact form
-    document.querySelectorAll('.gh-sticky-cta .gh-open-contact').forEach(function(btn) {
+    document.querySelectorAll('.app-bottom-nav .gh-open-contact, .gh-sticky-cta .gh-open-contact').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var modal = document.querySelector('.gh-contact-modal');
         if (modal) { modal.classList.add('is-open'); document.body.classList.add('gh-modal-open'); document.body.style.overflow = 'hidden'; }
