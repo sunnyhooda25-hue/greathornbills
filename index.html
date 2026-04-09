@@ -4435,16 +4435,16 @@
     overflow: hidden !important;
     height: auto !important;
     min-height: 100svh !important;
-    padding-bottom: 6rem !important;
+    padding-bottom: 4.5rem !important; /* Reduced to bring logos lower near the sticky bar */
   }
   .hero_container {
     position: relative !important;
     z-index: 2 !important;
-    padding: 6rem 1.25rem 2rem !important;
+    padding: 6rem 1.25rem 0 !important; /* Removed 2rem bottom padding to push logos down */
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    min-height: 90svh !important;
+    min-height: 85svh !important;
   }
   .hero_video {
     position: absolute !important;
@@ -4457,6 +4457,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 12vh !important; /* Pushes the video track physically lower on the device screen */
   }
   .hero_video video {
     width: 100% !important;
