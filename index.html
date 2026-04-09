@@ -4441,7 +4441,10 @@
     position: relative !important;
     z-index: 2 !important;
     padding: 6rem 1.25rem 2rem !important;
-    gap: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 90svh !important;
   }
   .hero_video {
     position: absolute !important;
@@ -4458,9 +4461,10 @@
   .hero_video video {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;
-    opacity: 0.8 !important;
-    mix-blend-mode: screen !important; /* Forces black background from webm fallback to be totally transparent */
+    object-fit: contain !important;
+    opacity: 0.9 !important;
+    filter: brightness(0.7) contrast(200%) !important; /* Crushes Safari #1e1e1e grey box fallback to #000 */
+    mix-blend-mode: screen !important; /* Blends pure black into alpha transparent */
   }
   .hero_heading-text,
   .hero_container .heading-style-h1 {
