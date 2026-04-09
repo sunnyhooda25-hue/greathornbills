@@ -4456,10 +4456,11 @@
     justify-content: center;
   }
   .hero_video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 0.8 !important;
+    mix-blend-mode: screen !important; /* Forces black background from webm fallback to be totally transparent */
   }
   .hero_heading-text,
   .hero_container .heading-style-h1 {
