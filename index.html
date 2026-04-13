@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDPDVD6B');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8" />
     <title>
       Great Hornbills | Marketing-Led Digital Agency
@@ -239,14 +246,6 @@
       }
     </style>
     <!-- ================= MARKETING TRACKING ================= -->
-    <!-- Google Tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-XXXXXXXXX');
-    </script>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -272,7 +271,8 @@
         document.querySelectorAll('.gh-open-contact').forEach(function(btn) {
           btn.addEventListener('click', function() {
             if (typeof fbq !== 'undefined') fbq('track', 'Lead');
-            if (typeof gtag !== 'undefined') gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXXX/YOUR_CONVERSION_LABEL' });
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ 'event': 'contact_modal_open' });
           });
         });
 
@@ -280,6 +280,8 @@
         document.querySelectorAll('a[href*="calendly.com"]').forEach(function(link) {
           link.addEventListener('click', function() {
             if (typeof fbq !== 'undefined') fbq('trackCustom', 'ScheduleCall_Click');
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ 'event': 'schedule_call_click' });
           });
         });
       });
@@ -371,6 +373,10 @@
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.17/build/spline-viewer.js"></script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDPDVD6B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div data-w-id="7fb8f43d-0eb2-3e0a-31c2-3af5a9ad3541" class="loader">
       <div class="loader_foreground">
         <div
