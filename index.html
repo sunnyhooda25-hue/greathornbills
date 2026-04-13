@@ -238,28 +238,58 @@
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
     </style>
-    <script
-      async=""
-      src="https://www.googletagmanager.com/gtag/js?id=G-LSBCEPSM80"
-    ></script>
-    <script type="text/javascript">
+    <!-- ================= MARKETING TRACKING ================= -->
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-LSBCEPSM80", { anonymize_ip: false });
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-XXXXXXXXX');
     </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      // Replace YOUR_PIXEL_ID with the final string when available
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
+    
+    <!-- CTA Tracking Hooks -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Track Lead action whenever a user opens the Contact Modal
+        document.querySelectorAll('.gh-open-contact').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+            if (typeof gtag !== 'undefined') gtag('event', 'conversion', { 'send_to': 'AW-XXXXXXXXX/YOUR_CONVERSION_LABEL' });
+          });
+        });
+
+        // Track clicks routing to Calendly Scheduler 
+        document.querySelectorAll('a[href*="calendly.com"]').forEach(function(link) {
+          link.addEventListener('click', function() {
+            if (typeof fbq !== 'undefined') fbq('trackCustom', 'ScheduleCall_Click');
+          });
+        });
+      });
+    </script>
+    <!-- ======================================================= -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
-    <!-- HubSpot Embed Code -->
-    <script
-      type="text/javascript"
-      id="hs-script-loader"
-      src="//js.hs-scripts.com/22144279.js"
-    ></script>
     <!-- jQuery, of course! -->
     <script
       src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
