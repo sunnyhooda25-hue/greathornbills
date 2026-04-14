@@ -280,8 +280,6 @@
         document.querySelectorAll('a[href*="calendly.com"]').forEach(function(link) {
           link.addEventListener('click', function() {
             if (typeof fbq !== 'undefined') fbq('trackCustom', 'ScheduleCall_Click');
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({ 'event': 'schedule_call_click' });
           });
         });
       });
@@ -499,7 +497,7 @@
                       <div>
                         <a
                           data-w-id="92155864-03ea-62e9-3ee9-304005f04023"
-                          href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener"
+                          href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'schedule_call_click'});"
                           class="button primary is-black w-button"
                           >Talk to our team</a
                         >
@@ -669,7 +667,7 @@
                       <div>
                         <a
                           data-w-id="92155864-03ea-62e9-3ee9-304005f0406d"
-                          href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener"
+                          href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'schedule_call_click'});"
                           class="button primary is-black w-button"
                           >Talk to our team</a
                         >
@@ -722,7 +720,7 @@
                               </div>
                               <div class="nav_grid-content-right">
                                 <a
-                                  href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener"
+                                  href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'schedule_call_click'});"
                                   target="_blank"
                                   class="nav_grid-big-link w-inline-block"
                                   ><div
@@ -863,7 +861,7 @@
                       <div>
                         <a
                           data-w-id="92155864-03ea-62e9-3ee9-304005f040af"
-                          href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener"
+                          href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'schedule_call_click'});"
                           class="button primary is-black w-button"
                           >Talk to our team</a
                         >
@@ -891,7 +889,7 @@
                   ><div class="text-color-cream">Talk to Us</div></button
                 ><link
                   rel="prefetch"
-                  href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener"
+                  href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'schedule_call_click'});"
                 />
               </div>
             </div>
@@ -972,7 +970,7 @@
                   style="background-color: #ffffff !important; color: #0a0f1a !important; border:none; cursor:pointer; font-size:inherit; font-family:inherit; font-weight:inherit; padding: 1rem 2rem;"
                 >Get in Touch</button>
                 <a
-                  href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener"
+                  href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'schedule_call_click'});"
                   class="button primary hero-button"
                   style="background: transparent !important; color: #ffffff !important; border: 2px solid rgba(255,255,255,0.4) !important; position:relative;"
                 >Book a Call</a>
@@ -4810,7 +4808,7 @@
       <span class="material-symbols-outlined" style="font-size: 1.125rem;">mail</span>
       <span>Get in Touch</span>
     </button>
-    <a href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" class="app-nav-btn active">
+    <a href="https://calendly.com/ryan-greathornbills/30min" target="_blank" rel="noopener" onclick="window.dataLayer = window.dataLayer || []; window.dataLayer.push({'event': 'schedule_call_click'});" class="app-nav-btn active">
       <span class="material-symbols-outlined" style="font-size: 1.125rem;">calendar_month</span>
       <span>Book a Call</span>
     </a>
