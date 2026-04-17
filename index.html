@@ -4772,32 +4772,44 @@
         if (e.key === 'Escape') closeModal();
       });
 
-      // Form submit
+      // Form submit via Fetch to Google Sheets
       form.addEventListener('submit', function(e){
         e.preventDefault();
+        
+        // PASTE YOUR GOOGLE WEB APP URL HERE:
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyLG-_RfLuiN--22NyS1TNPLAMYtIKzDLFYR3UD9N1DRPlucZVPe-0oSsWaFYZrmdiEUw/exec';
+        
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var originalBtnText = submitBtn.innerText || 'Submit';
+        submitBtn.innerText = 'Sending...';
+        submitBtn.disabled = true;
+
         var data = new FormData(form);
-        // Build mailto fallback
-        var subject = 'New inquiry from ' + (data.get('first_name') || '') + ' ' + (data.get('last_name') || '');
-        var body = 'Name: ' + data.get('first_name') + ' ' + data.get('last_name') +
-          '\nEmail: ' + data.get('email') +
-          '\nCompany: ' + (data.get('company') || 'N/A') +
-          '\nService: ' + (data.get('service') || 'N/A') +
-          '\nMessage: ' + data.get('message');
 
-        // Show success UI
-        form.style.display = 'none';
-        success.style.display = 'block';
-
-        // Send email via mailto
-        window.location.href = 'mailto:accounts@greathornbills.com?subject=' +
-          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-        // Reset after 3 seconds
-        setTimeout(function(){
-          form.reset();
-          form.style.display = 'flex';
-          success.style.display = 'none';
-        }, 4000);
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: data
+        })
+        .then(function(response) {
+          // With no-cors, we can't read the exact response, so we assume success if it didn't throw an error
+          form.style.display = 'none';
+          success.style.display = 'block';
+        })
+        .catch(function(error) {
+          console.error("Form submission error: ", error);
+          alert("We ran into an issue submitting the form. Please try again later.");
+        })
+        .finally(function() {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+          
+          setTimeout(function(){
+            form.reset();
+            form.style.display = 'flex';
+            success.style.display = 'none';
+          }, 4000);
+        });
       });
     })();
   </script>
