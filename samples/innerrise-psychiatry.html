@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>InnerRise Psychiatry — Compassionate Mental Health Care in Massachusetts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F4EE;
+    --cream:#FAF7F1;
+    --ink:#1E2A32;
+    --muted:#5A6670;
+    --sage:#8FA99B;
+    --sage-dark:#5E7A6C;
+    --blush:#E8D5C4;
+    --blue:#A7C0CF;
+    --line:#E3DED3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1180px;margin:0 auto;padding:0 28px}
+  .serif{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-0.01em}
+
+  /* NAV */
+  nav{position:sticky;top:0;background:rgba(247,244,238,0.85);backdrop-filter:blur(12px);z-index:50;border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;max-width:1180px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:22px;font-weight:600}
+  .logo-mark{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--sage),var(--sage-dark));display:grid;place-items:center;color:#fff;font-weight:700}
+  .nav-links{display:flex;gap:32px;align-items:center;font-size:15px;color:var(--muted)}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:500;font-size:15px;transition:all 0.2s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--sage-dark);color:#fff}
+  .btn-primary:hover{background:var(--ink);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:#fff}
+
+  /* HERO */
+  .hero{padding:90px 0 80px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:70px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--sage-dark);font-weight:500;margin-bottom:24px}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sage-dark)}
+  h1.hero-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,60px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:22px}
+  h1.hero-title em{font-style:italic;color:var(--sage-dark);font-weight:500}
+  .hero-sub{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:14px;align-items:center;margin-bottom:32px;flex-wrap:wrap}
+  .hero-trust{display:flex;gap:24px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .hero-trust span{display:flex;align-items:center;gap:6px}
+  .hero-trust svg{width:16px;height:16px;color:var(--sage-dark)}
+  .hero-visual{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#D5E0D9,#E8D5C4);box-shadow:0 30px 60px -20px rgba(30,42,50,0.15)}
+  .hero-visual::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.6),transparent 60%)}
+  .hero-card{position:absolute;bottom:-20px;right:-20px;background:#fff;padding:18px 22px;border-radius:16px;box-shadow:0 20px 40px -10px rgba(30,42,50,0.15);display:flex;align-items:center;gap:14px;max-width:260px}
+  .hero-card-dot{width:12px;height:12px;background:#7FB685;border-radius:50%;box-shadow:0 0 0 4px rgba(127,182,133,0.2);flex-shrink:0}
+  .hero-card-text{font-size:13px;line-height:1.4}
+  .hero-card-text strong{display:block;color:var(--ink);margin-bottom:2px}
+
+  /* TRUSTBAR */
+  .trustbar{padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .trust-label{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted)}
+  .trust-logos{display:flex;gap:40px;align-items:center;flex-wrap:wrap;opacity:0.7}
+  .trust-logos span{font-family:'Fraunces',serif;font-size:18px;color:var(--muted);font-weight:500}
+
+  /* SECTIONS */
+  section{padding:100px 0}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 60px}
+  .section-eyebrow{font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:16px;font-weight:500}
+  .section-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(32px,4vw,46px);line-height:1.1;letter-spacing:-0.02em;margin-bottom:18px}
+  .section-head p{color:var(--muted);font-size:17px}
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .service-card{background:#fff;padding:34px 30px;border-radius:20px;border:1px solid var(--line);transition:all 0.3s ease}
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -15px rgba(30,42,50,0.12)}
+  .service-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--sage),var(--sage-dark));display:grid;place-items:center;margin-bottom:22px}
+  .service-icon svg{width:24px;height:24px;color:#fff}
+  .service-card h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;margin-bottom:10px}
+  .service-card p{color:var(--muted);font-size:15px;margin-bottom:16px}
+  .service-card a{color:var(--sage-dark);font-size:14px;font-weight:500;border-bottom:1px solid transparent;transition:border 0.2s}
+  .service-card a:hover{border-bottom-color:var(--sage-dark)}
+
+  /* ABOUT */
+  .about{background:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center}
+  .about-visual{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(135deg,#C8D8D0,#E8D5C4);position:relative;overflow:hidden}
+  .about-visual::after{content:"";position:absolute;inset:20% 15% 20% 35%;background:radial-gradient(ellipse at center,rgba(255,255,255,0.8),transparent 70%);border-radius:50%}
+  .about h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,3.5vw,42px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:20px}
+  .about p{color:var(--muted);font-size:16px;margin-bottom:16px}
+  .credentials{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
+  .credential{background:#fff;padding:16px 18px;border-radius:12px;border:1px solid var(--line);font-size:13px}
+  .credential strong{display:block;color:var(--sage-dark);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px}
+
+  /* PROCESS */
+  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative}
+  .step{text-align:center;padding:0 10px}
+  .step-num{width:56px;height:56px;background:#fff;border:1.5px solid var(--line);border-radius:50%;display:grid;place-items:center;margin:0 auto 20px;font-family:'Fraunces',serif;font-size:22px;color:var(--sage-dark);font-weight:600}
+  .step h4{font-family:'Fraunces',serif;font-size:20px;font-weight:500;margin-bottom:10px}
+  .step p{color:var(--muted);font-size:14px}
+
+  /* TESTIMONIAL */
+  .testimonial{background:var(--ink);color:#fff;padding:100px 0}
+  .testimonial-inner{max-width:780px;margin:0 auto;text-align:center}
+  .quote-mark{font-family:'Fraunces',serif;font-size:80px;color:var(--sage);line-height:0.5;margin-bottom:20px;height:40px}
+  .testimonial blockquote{font-family:'Fraunces',serif;font-size:clamp(22px,2.6vw,30px);line-height:1.4;font-weight:400;margin-bottom:32px;letter-spacing:-0.01em}
+  .testimonial cite{font-style:normal;font-size:14px;color:rgba(255,255,255,0.7);letter-spacing:0.05em}
+
+  /* FAQ */
+  .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 26px;cursor:pointer}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;font-weight:500;font-size:16px}
+  .faq-q::after{content:"+";font-size:22px;color:var(--sage-dark);font-weight:300}
+  .faq-item.open .faq-q::after{content:"−"}
+  .faq-a{color:var(--muted);font-size:15px;margin-top:12px;display:none}
+  .faq-item.open .faq-a{display:block}
+
+  /* CTA */
+  .final-cta{background:linear-gradient(135deg,#8FA99B,#5E7A6C);color:#fff;padding:90px 0;text-align:center}
+  .final-cta h2{font-family:'Fraunces',serif;font-size:clamp(32px,4vw,46px);font-weight:500;margin-bottom:18px;letter-spacing:-0.02em}
+  .final-cta p{font-size:17px;opacity:0.9;max-width:560px;margin:0 auto 32px}
+  .final-cta .btn-primary{background:#fff;color:var(--ink)}
+  .final-cta .btn-primary:hover{background:var(--ink);color:#fff}
+
+  /* FOOTER */
+  footer{background:var(--cream);padding:60px 0 30px;border-top:1px solid var(--line)}
+  .footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:50px;margin-bottom:40px}
+  .footer-col h5{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-bottom:16px;font-weight:600}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:10px;font-size:14px;color:var(--muted)}
+  .footer-col li a:hover{color:var(--ink)}
+  .footer-about{font-size:14px;color:var(--muted);margin-top:14px;max-width:320px}
+  .footer-bottom{padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:13px;color:var(--muted);flex-wrap:wrap;gap:10px}
+
+  /* MOCK BANNER */
+  .mock-banner{background:var(--ink);color:#fff;text-align:center;padding:10px 20px;font-size:13px;letter-spacing:0.02em}
+  .mock-banner strong{color:#F7D58F}
+
+  @media(max-width:860px){
+    .hero-grid,.about-grid{grid-template-columns:1fr;gap:40px}
+    .services-grid,.process-grid{grid-template-columns:1fr;gap:20px}
+    .credentials{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:30px}
+    .nav-links{display:none}
+    section{padding:70px 0}
+    .hero{padding:50px 0 60px}
+  }
+</style>
+</head>
+<body>
+
+<div class="mock-banner">
+  ✨ <strong>A quick gift from Great Hornbills</strong> &nbsp;—&nbsp; We imagined what InnerRise Psychiatry's website could look like. Preview only.
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <div class="logo-mark">iR</div>
+      <span>InnerRise <em style="font-style:italic;color:var(--sage-dark);font-weight:400">Psychiatry</em></span>
+    </div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book" class="btn btn-primary">Book a consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Now accepting new patients in Massachusetts</span>
+        <h1 class="hero-title">Your mental health deserves <em>thoughtful, personal</em> care.</h1>
+        <p class="hero-sub">InnerRise Psychiatry offers evidence-based psychiatric care for adults navigating anxiety, depression, ADHD, trauma, and life transitions — in person and via telehealth across Massachusetts.</p>
+        <div class="hero-ctas">
+          <a href="#book" class="btn btn-primary">Book a 15-min consultation →</a>
+          <a href="#services" class="btn btn-outline">Explore services</a>
+        </div>
+        <div class="hero-trust">
+          <span>
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Board-certified psychiatrist
+          </span>
+          <span>
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            HIPAA-compliant care
+          </span>
+          <span>
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            Insurance accepted
+          </span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-dot"></div>
+          <div class="hero-card-text">
+            <strong>Same-week appointments</strong>
+            Next availability: Tomorrow, 10:30 AM
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUSTBAR -->
+<div class="trustbar">
+  <div class="container trust-inner">
+    <span class="trust-label">Insurance we accept</span>
+    <div class="trust-logos">
+      <span>Blue Cross Blue Shield</span>
+      <span>Aetna</span>
+      <span>Harvard Pilgrim</span>
+      <span>Cigna</span>
+      <span>United</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">What we treat</div>
+      <h2>Comprehensive psychiatric care, tailored to you</h2>
+      <p>Every person's journey is different. We take the time to understand yours before recommending a path forward.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3>Anxiety & Depression</h3>
+        <p>Compassionate evaluation and treatment with medication management, talk therapy, or both — whatever fits you best.</p>
+        <a href="#book">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3>ADHD Care</h3>
+        <p>Thorough diagnostic assessment and ongoing medication management for adult ADHD — no rushed appointments.</p>
+        <a href="#book">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3>Trauma & PTSD</h3>
+        <p>A safe space to process difficult experiences with trauma-informed, evidence-based approaches.</p>
+        <a href="#book">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3>Medication Management</h3>
+        <p>Careful, collaborative prescribing with regular check-ins. We believe in the lowest effective dose, always.</p>
+        <a href="#book">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <h3>Telehealth Across MA</h3>
+        <p>Secure video visits from anywhere in Massachusetts — same quality of care, from your couch.</p>
+        <a href="#book">Learn more →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3>Life Transitions</h3>
+        <p>Support through career shifts, grief, relationships, and the in-between seasons that don't fit neatly into a diagnosis.</p>
+        <a href="#book">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual"></div>
+      <div>
+        <div class="section-eyebrow">Meet your psychiatrist</div>
+        <h2>Care that sees the whole person — not just a diagnosis.</h2>
+        <p>InnerRise Psychiatry was founded on a simple belief: that quality mental health care shouldn't feel rushed, transactional, or clinical. Every patient deserves to be heard, respected, and treated with genuine curiosity.</p>
+        <p>With years of experience in community mental health and private practice, we bring a warm, collaborative approach to psychiatric care — blending evidence-based medicine with the kind of attention that's increasingly hard to find.</p>
+        <div class="credentials">
+          <div class="credential">
+            <strong>Board Certified</strong>
+            American Board of Psychiatry & Neurology
+          </div>
+          <div class="credential">
+            <strong>Licensed</strong>
+            Commonwealth of Massachusetts
+          </div>
+          <div class="credential">
+            <strong>Specialties</strong>
+            Anxiety, ADHD, Trauma, Mood
+          </div>
+          <div class="credential">
+            <strong>Languages</strong>
+            English
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">How it works</div>
+      <h2>Getting started is simple</h2>
+      <p>Three easy steps — no phone tag, no paperwork mountains, no waiting weeks for an opening.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Book online</h4>
+        <p>Choose a 15-minute free consultation time that works for you. No phone calls required.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Meet for a consult</h4>
+        <p>We'll talk briefly about what's going on and whether we're the right fit for your needs.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Begin care</h4>
+        <p>If it's a good match, we schedule your full intake — often within the same week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="container">
+    <div class="testimonial-inner">
+      <div class="quote-mark">"</div>
+      <blockquote>For the first time in years, I felt like my psychiatrist actually listened. She didn't rush me, didn't just hand me a prescription — she helped me understand what I was going through. That made all the difference.</blockquote>
+      <cite>— Patient review, verified via Psychology Today</cite>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Common questions</div>
+      <h2>Before your first visit</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q">Do you accept my insurance?</div>
+        <div class="faq-a">We accept Blue Cross Blue Shield, Aetna, Harvard Pilgrim, Cigna, and United. If you don't see yours listed, reach out — we may still be in-network or able to provide a superbill for out-of-network reimbursement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is telehealth available?</div>
+        <div class="faq-a">Yes — we offer secure, HIPAA-compliant video visits to anyone located in Massachusetts. Most patients choose a mix of in-person and telehealth appointments.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long until I can be seen?</div>
+        <div class="faq-a">We typically offer free 15-minute consultations within 3-5 business days and full intake appointments within 1-2 weeks.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What conditions do you treat?</div>
+        <div class="faq-a">We specialize in adult mental health including anxiety disorders, depression, ADHD, trauma/PTSD, bipolar disorder, and life transitions. If you're unsure whether we're the right fit, book a free consult — we'll help you figure it out.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you prescribe controlled medications?</div>
+        <div class="faq-a">Yes, when clinically appropriate. We follow all Massachusetts regulations and prefer a thoughtful, collaborative approach to prescribing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="book" class="final-cta">
+  <div class="container">
+    <h2>Ready to take the first step?</h2>
+    <p>Book a free 15-minute consultation. No commitment, no pressure — just a conversation about whether we're the right fit.</p>
+    <a href="#" class="btn btn-primary">Book your consultation →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <div class="logo-mark">iR</div>
+          <span>InnerRise <em style="font-style:italic;color:var(--sage-dark);font-weight:400">Psychiatry</em></span>
+        </div>
+        <p class="footer-about">Compassionate, evidence-based psychiatric care for adults across Massachusetts. In-person and telehealth appointments.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Practice</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">How it works</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Patients</h5>
+        <ul>
+          <li><a href="#book">Book appointment</a></li>
+          <li><a href="#">New patient forms</a></li>
+          <li><a href="#">Insurance & fees</a></li>
+          <li><a href="#">Patient portal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li>Massachusetts</li>
+          <li>hello@innerrisepsych.com</li>
+          <li>(508) 555-0123</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 InnerRise Psychiatry. All rights reserved.</span>
+      <span>HIPAA Compliant · Privacy Policy · Terms</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.addEventListener('click',()=>item.classList.toggle('open'));
+  });
+</script>
+
+</body>
+</html>
