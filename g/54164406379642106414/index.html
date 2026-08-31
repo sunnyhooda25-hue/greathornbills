@@ -30,7 +30,62 @@
   a{color:#E8B33C;text-decoration:none}
   a:hover{color:#F2C255}
   ::selection{background:#E8B33C;color:#071F1A}
-</style></head>
+</style><!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','1262627199183730');
+fbq('track','PageView');
+
+/* Purchase. Only counts a real, not-yet-counted payment. */
+(function(){
+  var q = new URLSearchParams(window.location.search);
+  var id = null;
+
+  /* Razorpay payment ids look like pay_XXXXXXXXXXXX and are unique
+     per payment. Find one by shape, whatever the parameter is called.
+     Deliberately NOT matching *_link_id: that value is the same for
+     every buyer, and Meta dedupes on eventID, so reusing it would
+     collapse every sale into one Purchase. */
+  q.forEach(function(v, k){
+    if (!id && /^pay_[A-Za-z0-9]{6,}$/.test(v) && !/link/i.test(k)) id = v;
+  });
+
+  /* Fall back to the conventional names, same exclusion. */
+  if (!id) id = q.get('razorpay_payment_id') || q.get('payment_id');
+
+  /* No unique payment reference means either a direct visit or a
+     redirect shape we haven't seen. Either way, don't report a sale. */
+  if (!id) return;
+
+  /* Same payment already reported? A refresh isn't a second sale. */
+  var key = 'fztp_purchase_' + id;
+  try {
+    if (window.localStorage.getItem(key)) return;
+    window.localStorage.setItem(key, '1');
+  } catch (e) { /* private mode - fall through and report once */ }
+
+  fbq('track','Purchase',{
+    content_name:'From Zero to Pipeline',
+    content_ids:['fztp-ebook'],
+    content_type:'product',
+    value:99.00,
+    currency:'INR',
+    num_items:1
+  }, { eventID: id });
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1262627199183730&amp;ev=PageView&amp;noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+</head>
 <body>
 <div style="background: rgb(7, 31, 26); min-height: 100vh; overflow-x: hidden;">
 

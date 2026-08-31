@@ -40,7 +40,33 @@
   a{color:#071F1A;text-decoration:none}
   a:hover{color:#8A6A16}
   ::selection{background:#E8B33C;color:#071F1A}
-</style></head>
+</style><!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','1262627199183730');
+fbq('track','PageView');
+
+/* The visitor has seen the offer. Fires once, on load. */
+fbq('track','ViewContent',{
+  content_name:'From Zero to Pipeline',
+  content_ids:['fztp-ebook'],
+  content_type:'product',
+  value:99.00,
+  currency:'INR'
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1262627199183730&amp;ev=PageView&amp;noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+</head>
 <body>
 <div style="background: rgb(247, 243, 234); overflow-x: hidden;">
 
@@ -998,4 +1024,28 @@
 
 
 
+
+<!-- Meta Pixel: InitiateCheckout on any Razorpay CTA -->
+<script>
+(function(){
+  var sent = false;
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if (!t || typeof t.closest !== 'function') return;
+    var a = t.closest('a[href*="rzp.io"], a[href*="razorpay"]');
+    if (!a || typeof fbq !== 'function') return;
+    /* One per pageview - people click the sticky bar twice. */
+    if (sent) return;
+    sent = true;
+    fbq('track','InitiateCheckout',{
+      content_name:'From Zero to Pipeline',
+      content_ids:['fztp-ebook'],
+      content_type:'product',
+      value:99.00,
+      currency:'INR'
+    });
+  }, true);
+})();
+</script>
+<!-- End Meta Pixel -->
 </body></html>
