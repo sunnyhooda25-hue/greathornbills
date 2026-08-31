@@ -44,29 +44,31 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 fbq('init','1262627199183730');
 fbq('track','PageView');
 
-/* Purchase. Only counts a real, not-yet-counted payment. */
+/* Purchase.
+
+   Razorpay Payment Pages redirect here with NO query parameters — verified
+   against a real payment on 1 Sep 2026 — so there is no payment id to key on.
+   The only signal available in the browser is "this browser has arrived at
+   this page for the first time", which is what we use.
+
+   If a payment id ever does appear (a switch to Payment Links, or Razorpay
+   changing the redirect), it is preferred automatically and gives proper
+   per-payment deduplication against a future Conversions API event. */
 (function(){
-  var q = new URLSearchParams(window.location.search);
+  var q  = new URLSearchParams(window.location.search);
   var id = null;
 
-  /* Razorpay payment ids look like pay_XXXXXXXXXXXX and are unique
-     per payment. Find one by shape, whatever the parameter is called.
-     Deliberately NOT matching *_link_id: that value is the same for
-     every buyer, and Meta dedupes on eventID, so reusing it would
-     collapse every sale into one Purchase. */
+  /* Payment ids look like pay_XXXXXXXXXXXX and are unique per payment.
+     Never match *_link_id: that value is identical for every buyer, and
+     Meta dedupes on eventID, so it would collapse all sales into one. */
   q.forEach(function(v, k){
     if (!id && /^pay_[A-Za-z0-9]{6,}$/.test(v) && !/link/i.test(k)) id = v;
   });
-
-  /* Fall back to the conventional names, same exclusion. */
   if (!id) id = q.get('razorpay_payment_id') || q.get('payment_id');
 
-  /* No unique payment reference means either a direct visit or a
-     redirect shape we haven't seen. Either way, don't report a sale. */
-  if (!id) return;
-
-  /* Same payment already reported? A refresh isn't a second sale. */
-  var key = 'fztp_purchase_' + id;
+  /* One Purchase per browser. A buyer returning to re-download their PDF
+     does not get counted twice. */
+  var key = id ? ('fztp_purchase_' + id) : 'fztp_purchase_done';
   try {
     if (window.localStorage.getItem(key)) return;
     window.localStorage.setItem(key, '1');
@@ -79,7 +81,8 @@ fbq('track','PageView');
     value:99.00,
     currency:'INR',
     num_items:1
-  }, { eventID: id });
+  }, { eventID: id || ('fztp-' + Date.now() + '-' +
+       Math.random().toString(36).slice(2,10)) });
 })();
 </script>
 <noscript><img height="1" width="1" style="display:none" alt=""
