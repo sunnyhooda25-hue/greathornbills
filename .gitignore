@@ -13,3 +13,7 @@ website-repo/
 website/node_modules/
 website/package.json
 website/package-lock.json
+.dcbuild/
+
+# gated ebook delivery (PDF is an intentional deliverable, overrides *.pdf above)
+!dl/**/*.pdf
