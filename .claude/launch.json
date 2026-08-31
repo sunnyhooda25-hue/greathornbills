@@ -4,12 +4,26 @@
     {
       "name": "gh-website",
       "runtimeExecutable": "/opt/homebrew/bin/node",
-      "runtimeArgs": ["/opt/homebrew/bin/npx", "vite", "--host"],
+      "runtimeArgs": [
+        "/opt/homebrew/bin/npx",
+        "vite",
+        "--host"
+      ],
       "port": 5173,
       "cwd": "website",
       "env": {
         "PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
       }
+    },
+    {
+      "name": "gh-static-root",
+      "runtimeExecutable": "/usr/bin/python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8899"
+      ],
+      "port": 8899
     }
   ]
 }
