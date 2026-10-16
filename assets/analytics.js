@@ -1,6 +1,6 @@
 /* Great Hornbills GA4. Public measurement ID, not a secret. */
 (() => {
-  const measurementId = 'G-CVD4LR5MXN';
+  const measurementId = 'G-G8T78B119F';
   const productionHosts = ['greathornbills.com', 'www.greathornbills.com'];
   const internalPage = /^\/(?:qa|samples)(?:\/|$)|^\/website\/public\/|^\/(?:direction|hero-options)\.html$/;
   if (!productionHosts.includes(location.hostname) || internalPage.test(location.pathname)) return;
