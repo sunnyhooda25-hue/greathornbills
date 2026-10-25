@@ -422,7 +422,7 @@ function cC(){ov.classList.remove('on');document.body.style.overflow='';st.class
 document.querySelectorAll('.gh-open').forEach(b=>b.onclick=oC);
 document.querySelectorAll('.gh-x').forEach(b=>b.onclick=cC);
 ov.onclick=e=>{if(e.target===ov)cC()};
-fm.onsubmit=e=>{e.preventDefault();const d=new FormData(fm);location.href='mailto:accounts@greathornbills.com?subject='+encodeURIComponent('Inquiry from '+d.get('firstName')+' '+d.get('lastName'))+'&body='+encodeURIComponent('Name: '+d.get('firstName')+' '+d.get('lastName')+'\nEmail: '+d.get('email')+'\nCompany: '+d.get('company')+'\nService: '+d.get('service')+'\n\n'+d.get('message'));fv.style.display='none';sv.classList.add('show')};
+fm.onsubmit=e=>{e.preventDefault();const d=new FormData(fm);if(window.ghTrackEmail)window.ghTrackEmail('website_form_submit');location.href='mailto:accounts@greathornbills.com?subject='+encodeURIComponent('Inquiry from '+d.get('firstName')+' '+d.get('lastName'))+'&body='+encodeURIComponent('Name: '+d.get('firstName')+' '+d.get('lastName')+'\nEmail: '+d.get('email')+'\nCompany: '+d.get('company')+'\nService: '+d.get('service')+'\n\n'+d.get('message'));fv.style.display='none';sv.classList.add('show')};
 let sv2=false;const he=document.getElementById('hero');
 function ck(){if(innerWidth>768)return;const s=he.getBoundingClientRect().bottom<0;if(s!==sv2){sv2=s;st.classList.toggle('vis',s)}}
 addEventListener('scroll',ck,{passive:true});ck();
